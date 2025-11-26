@@ -24,3 +24,77 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Fade in + slight slide up for whole hero */
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-section {
+  animation: heroFadeInUp 0.9s ease-out both;
+}
+
+/* Slow floating glow background */
+@keyframes heroGlowFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.03);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-glow {
+  animation: heroGlowFloat 7s ease-in-out infinite;
+}
+
+/* Soft fade-in for heading and subtitle with slight delay */
+.hero-heading {
+  animation: heroFadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-subtitle {
+  animation: heroFadeInUp 1s ease-out 0.35s both;
+}
+
+/* Button pop-in + subtle pulse on idle */
+@keyframes heroButtonPop {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroButtonPulse {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.35);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+  }
+}
+
+.hero-button {
+  animation: heroButtonPop 0.9s ease-out 0.55s both,
+             heroButtonPulse 3s ease-in-out 1.6s infinite;
+}
