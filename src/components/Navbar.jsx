@@ -16,7 +16,7 @@ const Navbar = () => {
           <li className="hover:text-slate-900 cursor-pointer">Industries</li>
           <li className="hover:text-slate-900 cursor-pointer">Company</li>
           <li className="hover:text-slate-900 cursor-pointer">Solutions</li>
-          <li className="hover:text-slate-900 cursor-pointer">IT Services</li>
+          <li className="hover:text-slate-900 cursor-pointer">Services</li>
           <li className="hover:text-slate-900 cursor-pointer">Insights</li>
         </ul>
 

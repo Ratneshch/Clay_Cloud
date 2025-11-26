@@ -3,16 +3,14 @@ import React from "react";
 import Image from "next/image";
 
 const partners = [
-  "/logos/aws.png",
-  "/logos/microsoft.png",
-  "/logos/databricks.png",
-  "/logos/aws.png",
+  "/images/amazon.png",
+  "/images/Microsoft.png",
+  "/images/Databricks.png",
 ];
 
 const TechnologyMarquee = () => {
   return (
-   <section className=" pb-12 pt-6 text-center bg-white overflow-hidden">
-    
+    <section className="pb-12 pt-6 text-center bg-white overflow-hidden">
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-[#1e1b4b]">
         Our Technology Partners
@@ -33,9 +31,9 @@ const TechnologyMarquee = () => {
               <Image
                 src={logo}
                 alt="Technology Partner"
-                width={120}
-                height={60}
-                className="object-contain"
+                width={80}
+                height={40}
+                className="object-contain opacity-90"
               />
             </div>
           ))}
@@ -43,6 +41,7 @@ const TechnologyMarquee = () => {
       </div>
     </section>
   );
+  
 };
 
 export default TechnologyMarquee;
