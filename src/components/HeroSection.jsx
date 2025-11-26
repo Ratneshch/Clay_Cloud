@@ -8,7 +8,7 @@ import { FaCloud } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <section className="hero-section relative w-full overflow-hidden bg-gradient-to-b from-white via-[#f5f7ff] to-white pt-45 pb-24">
+    <section className="hero-section relative w-full overflow-hidden bg-gradient-to-b from-white via-[#f5f7ff] to-white pt-40 pb-24 font-inter">
       {/* Soft glow background */}
       <div className="pointer-events-none absolute inset-0 flex justify-center">
         <div className="hero-glow h-72 w-72 bg-[radial-gradient(circle_at_center,#c7e2ff,transparent_60%)] opacity-70 blur-3xl" />
@@ -23,7 +23,7 @@ const HeroSection = () => {
         </div>
 
         {/* Left middle server icon */}
-        <div className="float-icon float-2 absolute left-50 bottom-60 ">
+        <div className="float-icon float-2 absolute left-40 bottom-60 ">
           <div className="flex flex-col gap-1">
             
             <FaServer className="h-14 w-10 text-blue-300 fill-current " />
@@ -41,11 +41,11 @@ const HeroSection = () => {
         </div>
 
         {/* Blur color things */}
-      <div className="float-icon float-5 absolute left-92 bottom-40 -z-10">
+      <div className="float-icon float-5 absolute right-50 bottom-46 -z-10">
   <div className="h-42 w-42 rounded-full bg-green-300 opacity-70 blur-3xl" />
 </div>
 
- <div className="float-icon float-5 absolute right-92 top-40 -z-10">
+ <div className="float-icon float-5 absolute left-56 top-36 -z-10">
   <div className="h-42 w-42 rounded-full bg-blue-400 opacity-70 blur-3xl" />
 </div>
 
@@ -53,7 +53,7 @@ const HeroSection = () => {
 
       <div className="relative max-w-4xl mx-auto px-4 text-center">
         {/* Heading */}
-        <h1 className="hero-heading text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+        <h1 className="hero-heading text-3xl md:text-[68px] font-extrabold text-slate-900 leading-tight">
           Redefining Digital
           <br className="hidden sm:block" />
           Transformation with
@@ -64,15 +64,19 @@ const HeroSection = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="hero-subtitle mt-6 text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
-          Empowering enterprises to accelerate digital growth through intelligent,<br/>
-          cloud-native, and human-centric solutions.
-        </p>
+       <p className="hero-subtitle mt-6 text-sm md:text-base lg:text-xl text-slate-600 max-w-2xl mx-auto">
+  Empowering enterprises to accelerate digital growth through intelligent,<br/>
+  cloud-native, and human-centric solutions.
+</p>
 
         {/* CTA button */}
-        <button className="hero-button mt-10 inline-flex items-center justify-center rounded-xl px-8 py-3 text-sm md:text-base font-medium bg-[#111827] text-white shadow-md hover:bg-black/90 transition">
-          Get Started
-        </button>
+        <button className="hero-button mt-10 inline-flex items-center justify-center 
+w-[206px] h-[68px] px-[48px] py-[20px] rounded-[16px]
+text-sm md:text-base font-medium 
+bg-[#111827] text-white shadow-md hover:bg-black/90 transition">
+  Get Started
+</button>
+
       </div>
       
     </section>
