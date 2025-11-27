@@ -1,5 +1,7 @@
 import AboutCloud from '@/components/AboutCloud'
 import HeroSection from '@/components/HeroSection'
+import InsightsResources from '@/components/InsightsResources'
+import ProductPage from '@/components/ProductPage'
 import Serve from '@/components/Serve'
 import TechnologyMarquee from '@/components/TechnologyMarquee'
 import UseCase from '@/components/UseCase'
@@ -10,9 +12,11 @@ const page = () => {
     <div>
       <HeroSection/>
       <TechnologyMarquee/>
+      <ProductPage/>
       <UseCase />
       <Serve />
       <AboutCloud />
+      <InsightsResources/>
     </div>
   )
 }
