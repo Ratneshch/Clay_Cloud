@@ -57,7 +57,7 @@ const UseCase = () => {
         </div>
 
         {/* second part */}
-        <div className='mt-10 flex flex-wrap justify-center gap-10'>
+        <div className='mt-15 flex flex-wrap justify-center gap-10'>
             {useCaseData.map(item =>(
                 <UseCaseCard key={item.id} title={item.title} description={item.description} icon={item.icon} shadowColor={item.shadowColor} />
             ))}

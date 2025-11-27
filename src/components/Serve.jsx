@@ -92,9 +92,9 @@ const Serve = () => {
         </div>
 
         {/* second part */}
-        <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-10'>
+        <div className='mt-15 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-10'>
             {useCases.map(item =>(
-                <ServeCard key={item.id} title={item.title} description={item.description} icon={item.icon} bgcolor={item.bgcolor} textcolor={item.textcolor} iconolor={item.iconolor} shadowColor={item.shadowColor} bordercolor={item.bordercolor} />
+                <ServeCard key={item.id} title={item.title} description={item.description} icon={item.icon} bgcolor={item.bgcolor} textcolor={item.textcolor} iconolor={item.iconolor} bordercolor={item.bordercolor} />
             ))}
         </div>
 
