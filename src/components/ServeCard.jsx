@@ -23,7 +23,7 @@ const ServeCard = ({title, description, icon, bgcolor, iconolor, textcolor, bord
       <h3 className="text-[18px] sm:text-[20px]  font-syne mb-2 mt-2 font-bold" style={{ color: textcolor }}>
         {title}
       </h3>
-
+      
       <p className="font-inter text-[14px] sm:text-[17px] font-medium" style={{ color: textcolor }}>
         {description}
       </p>
