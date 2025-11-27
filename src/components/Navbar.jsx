@@ -23,6 +23,7 @@ const Navbar = () => {
               <li
                 key={item}
                 className="hover:text-slate-900 cursor-pointer transition-colors"
+                
               >
                 {item}
               </li>
