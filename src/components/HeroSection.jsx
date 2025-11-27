@@ -47,12 +47,12 @@ const HeroSection = () => {
 
       <div className="relative max-w-4xl mx-auto px-4 text-center">
         {/* Heading */}
-        <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-[68px] font-extrabold text-slate-900 leading-tight">
+        <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-[68px] font-bold text-slate-900 ">
           Redefining Digital
           <br className="hidden sm:block" />
           Transformation with
           <br className="hidden sm:block" />
-          <span className="block mt-2 text-transparent bg-clip-text bg-linear-to-r from-[#2563EB] via-[#2563EB] to-[#22C55E]">
+          <span className="block  text-transparent bg-clip-text bg-linear-to-r from-[#2563EB] via-[#2563EB] to-[#22C55E]">
             Cloud, AI &amp; Innovation
           </span>
         </h1>
