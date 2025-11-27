@@ -4,7 +4,7 @@ import { Twitter, Linkedin, Youtube, Github, MessageCircle } from "lucide-react"
 
 const Footer = () => {
   return (
-    <footer className="bg-[#02051b] text-white flex justify-center mt-20">
+    <footer className="bg-[#02051b] text-white flex justify-center mt-20 font-inter">
       {/* OUTER FOOTER */}
       <div className="w-full h-[427px] pt-16 pb-16 pl-20 pr-20">
         {/* INNER CONTENT */}
