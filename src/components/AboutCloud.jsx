@@ -83,7 +83,7 @@ const AboutCloud = () => {
         </div>
 
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-15 px-4">
               {cardData.map((item) => (
                   <AboutCard
                       key={item.id}
@@ -97,7 +97,7 @@ const AboutCloud = () => {
               ))}
           </div>
 
-          <div className="w-full bg-[#f7f7f7] mt-10 rounded-3xl px-8 py-10 flex flex-col items-center justify-center">
+          <div className="w-full bg-[#f7f7f7] mt-10 rounded-3xl px-8 py-10 flex flex-col items-center mt-15 justify-center">
               <h2 className="text-3xl text-black text-center font-bold mb-10">Our Core Values</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl text-center">

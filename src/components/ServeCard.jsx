@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ServeCard = ({title, description, icon, bgcolor, iconolor, textcolor, shadowColor, bordercolor}) => {
+const ServeCard = ({title, description, icon, bgcolor, iconolor, textcolor, bordercolor}) => {
   return (
     <div
       className="
@@ -11,7 +11,7 @@ const ServeCard = ({title, description, icon, bgcolor, iconolor, textcolor, shad
         transition-shadow duration-300
         border
       "
-      style={{ backgroundColor: bgcolor, boxShadow: `0px 0px 15px 2px ${shadowColor}`, borderColor: bordercolor }}
+      style={{ backgroundColor: bgcolor, borderColor: bordercolor }}
     >
       <div
         className="p-4 rounded-lg mb-2 mt-8"
