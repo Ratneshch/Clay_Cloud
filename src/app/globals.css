@@ -160,13 +160,21 @@ body {
   animation: marquee 25s linear infinite;
 }
 
-
-/* blog */
-/* Hide scrollbar utility */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.hidescrollbar::-webkit-scrollbar{
+  display: none;
 }

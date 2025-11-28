@@ -11,9 +11,6 @@ import { FaUsers } from "react-icons/fa6";
 export default function ProductPage() {
   const icons = { users: <FaUsers />, robot: <RiRobot2Fill /> };
 
-  // -----------------------------------------
-  // Internal ProductCard Component (same file)
-  // -----------------------------------------
   const ProductCard = ({ icon, title, subtitle, description, image, tags }) => {
     const tagColors = [
       "bg-blue-200",
@@ -35,7 +32,7 @@ export default function ProductPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={animate ? { opacity: 1, y: 0 } : false}
         transition={{ duration: 0.7 }}
-        className="w-full sm:w-80 md:w-96 lg:w-[624px] h-auto lg:h-[534px]"
+        className="w-full sm:w-80 md:w-96 lg:w-[624px] px-5 h-auto lg:h-[480px]"
       >
         <div className="bg-white rounded-2xl shadow-[8px_10px_20px_rgba(0,0,0,0.08)] hover:shadow-[0px_8px_20px_rgba(0,0,0,0.12)] p-4 sm:p-5 md:p-6 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
           {/* Icon + Title */}
@@ -54,7 +51,7 @@ export default function ProductPage() {
           </div>
 
           {/* Description */}
-          <p className="mt-2 sm:mt-3 text-xs sm:text-sm md:text-sm lg:text-base font-inter text-gray-600 flex-1">
+          <p className="mt-2 sm:mt-3 text-xs sm:text-sm md:text-sm lg:text-base font-inter text-gray-600 ">
             {description}
           </p>
 
@@ -62,7 +59,7 @@ export default function ProductPage() {
           <motion.img
             src={image}
             alt={title}
-            className="w-full h-40 sm:h-48 md:h-56 lg:h-64 object-cover rounded-xl mt-3 sm:mt-4"
+            className="w-full h-40 sm:h-48 md:h-56 lg:h-64 object-cover mb-2 rounded-xl mt-3 sm:mt-4"
             whileHover={{ scale: 1.02 }}
           />
 
@@ -105,7 +102,7 @@ export default function ProductPage() {
       </motion.div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-8 lg:gap-50">
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-8 lg:gap-30">
         {products.map((item) => (
           <ProductCard
             key={item.id}
