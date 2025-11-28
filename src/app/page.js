@@ -7,6 +7,7 @@ import TalkToUs from '@/components/TalkToUs'
 import TechnologyMarquee from '@/components/TechnologyMarquee'
 import UseCase from '@/components/UseCase'
 import Services from '@/components/Services'
+import Strategy from '@/components/Strategy'
 import React from 'react'
 
 const page = () => {
@@ -15,6 +16,7 @@ const page = () => {
       <HeroSection/>
       <TechnologyMarquee/>
       <Services/>
+      <Strategy/>
       <UseCase />
       <Serve />
       <AboutCloud />
