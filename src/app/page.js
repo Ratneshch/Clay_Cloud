@@ -18,6 +18,7 @@ const page = () => {
       <Serve />
       <AboutCloud />
       <InsightsResources/>
+      <TalkToUs/>
     </div>
   )
 }
