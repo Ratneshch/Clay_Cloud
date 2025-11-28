@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 
 const navItems = [
@@ -36,10 +36,7 @@ const navItems = [
     columns: [
       {
         title: "Solutions",
-        items: [
-          "ClayCloudHR – AI powered End to end payroll software",
-          "AI powered Employee Query BOT",
-        ],
+        items: ["ClayCloudHR ", "AI powered Employee Query BOT"],
       },
     ],
   },
@@ -48,9 +45,9 @@ const navItems = [
     key: "outsourcing",
     columns: [
       {
-        title: "IT Outsourcing services",
+        title: "Services",
         items: [
-          "Managed IT outsourcing services",
+          "Consulting Services",
           "Pay per service model",
           "Contract based models",
           "End to end recruitment support",
@@ -76,10 +73,40 @@ const navItems = [
   },
 ];
 
+// Submenu for "Consulting Services"
+const consultingServicesList = [
+  "Data & AI Services",
+  "Generative AI (GenAI) Solutions",
+  "DevOps & Cloud Engineering",
+  "Application Modernization",
+  "UI/UX Design & Engineering",
+  "Cybersecurity Services",
+  "Managed Services",
+  "Cloud Consulting & Advisory",
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // mobile main menu
   const [openMenu, setOpenMenu] = useState(null); // which desktop dropdown is open
   const [openMobileKey, setOpenMobileKey] = useState(null); // which mobile section is open
+  const [openServiceChild, setOpenServiceChild] = useState(false); // Consulting submenu open?
+
+  const navRef = useRef(null);
+
+  // close dropdowns when clicking anywhere outside navbar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setOpenMenu(null);
+        setIsOpen(false);
+        setOpenMobileKey(null);
+        setOpenServiceChild(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // for now just log; later you can navigate with router.push()
   const handleClick = (label) => {
@@ -87,7 +114,10 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4 font-inter">
+    <header
+      ref={navRef}
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4 font-inter"
+    >
       <div className="w-full max-w-6xl">
         {/* Main navbar pill */}
         <nav className="relative w-full border border-[#6c63ff] rounded-full bg-white/80 backdrop-blur-sm shadow-sm px-4 md:px-10 py-2.5 md:py-3 flex items-center">
@@ -99,13 +129,14 @@ const Navbar = () => {
             <span className="font-bold">ClayCloud</span> Technologies
           </button>
 
-          {/* CENTER MENU - desktop/tablet with dropdown like BambooHR */}
+          {/* Desktop menu */}
           <div className="hidden md:flex flex-1 items-center justify-center gap-8 text-xs md:text-[16px] font-heading text-slate-700">
             {navItems.map((item) => {
               const isActive = openMenu === item.key;
+
               return (
                 <div key={item.key} className="relative">
-                  {/* Top-level label - CLICK to open dropdown */}
+                  {/* Top-level label */}
                   <button
                     className={`pb-2 px-1 border-b-2 cursor-pointer transition-colors ${
                       isActive
@@ -113,18 +144,23 @@ const Navbar = () => {
                         : "border-transparent hover:text-slate-900"
                     }`}
                     onClick={() =>
-                      setOpenMenu((prev) => (prev === item.key ? null : item.key))
+                      setOpenMenu((prev) => {
+                        const next = prev === item.key ? null : item.key;
+                        if (next !== "outsourcing") {
+                          setOpenServiceChild(false);
+                        }
+                        return next;
+                      })
                     }
                   >
                     {item.label}
                   </button>
 
-                  {/* Simple dropdown panel under item */}
-                  {isActive && (
+                  {/* Normal dropdowns (all except Services) */}
+                  {isActive && item.key !== "outsourcing" && (
                     <div className="absolute left-0 mt-[1px] w-64 rounded-md bg-white shadow-md border border-slate-200 py-3 px-4">
                       {item.columns.map((col) => (
                         <div key={col.title}>
-                         
                           <ul className="space-y-1">
                             {col.items.map((subItem) => (
                               <li key={subItem}>
@@ -139,6 +175,75 @@ const Navbar = () => {
                           </ul>
                         </div>
                       ))}
+                    </div>
+                  )}
+
+                  {/* Services dropdown with conditional second column */}
+                  {isActive && item.key === "outsourcing" && (
+                    <div className="absolute left-0 mt-[1px] rounded-md bg-white shadow-md border border-slate-200 py-3 px-4">
+                      <div
+                        className={`flex ${
+                          openServiceChild ? "w-[460px]" : "w-64"
+                        } transition-all`}
+                      >
+                        {/* LEFT COLUMN */}
+                        <div
+                          className={`space-y-1 pr-4 ${
+                            openServiceChild
+                              ? "w-1/2 border-r border-slate-200"
+                              : "w-full"
+                          }`}
+                        >
+                          {item.columns.map((col) => (
+                            <ul key={col.title} className="space-y-1">
+                              {col.items.map((subItem) => {
+                                const isConsulting =
+                                  subItem === "Consulting Services";
+
+                                return (
+                                  <li key={subItem}>
+                                    <button
+                                      className={`w-full text-left text-sm cursor-pointer ${
+                                        isConsulting
+                                          ? "text-[#1545e6] font-semibold"
+                                          : "text-slate-800 hover:text-[#1545e6]"
+                                      }`}
+                                      onMouseEnter={() => {
+                                        if (isConsulting) {
+                                          setOpenServiceChild(true);
+                                        } else {
+                                          setOpenServiceChild(false);
+                                        }
+                                      }}
+                                      onClick={() => handleClick(subItem)}
+                                    >
+                                      {subItem}
+                                    </button>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          ))}
+                        </div>
+
+                        {/* RIGHT COLUMN - ONLY FOR CONSULTING */}
+                        {openServiceChild && (
+                          <div className="w-1/2 pl-4">
+                            <ul className="space-y-1">
+                              {consultingServicesList.map((service) => (
+                                <li key={service}>
+                                  <button
+                                    className="w-full text-left text-sm text-slate-800 hover:text-[#1545e6] cursor-pointer"
+                                    onClick={() => handleClick(service)}
+                                  >
+                                    {service}
+                                  </button>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -168,7 +273,7 @@ const Navbar = () => {
           </button>
         </nav>
 
-        {/* Mobile dropdown menu */}
+        {/* Mobile dropdown menu (unchanged) */}
         {isOpen && (
           <div className="md:hidden mt-2 w-full">
             <div className="rounded-2xl bg-white/95 backdrop-blur-sm shadow-md border border-slate-100 py-3 px-4">
