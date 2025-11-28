@@ -22,11 +22,11 @@ const TechnologyMarquee = () => {
 
       {/* Marquee */}
       <div className="relative mt-8 md:mt-12 w-full overflow-hidden">
-        <div className="flex gap-4 sm:gap-6 md:gap-8 animate-marquee">
+        <div className="flex m-5 gap-4 sm:gap-6 md:gap-8 animate-marquee">
           {[...partners, ...partners].map((logo, index) => (
             <div
               key={index}
-              className="w-[180px] h-[90px] sm:w-[210px] sm:h-[110px] md:w-[256px] md:h-[128px] p-[1px] bg-white rounded-[18px] sm:rounded-[20px] md:rounded-[24px] shadow-md flex items-center justify-center border border-emerald-100">
+              className="w-[180px] h-[90px] sm:w-[80px] sm:h-[50px] md:w-[206px] md:h-[108px] p-[1px] bg-white rounded-[18px] sm:rounded-[20px] md:rounded-[24px] shadow-md flex items-center justify-center border border-emerald-100">
               <Image
                 src={logo}
                 alt="Technology Partner"
