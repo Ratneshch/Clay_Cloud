@@ -219,12 +219,12 @@ const Services = () => {
             <div className='md:pt-14 pt-8'>
 
                 {/* TABS */}
-                <ul className="flex py-4 overflow-x-scroll hidescrollbar whitespace-nowrap">
+                <ul className="flex py-4 overflow-x-auto hidescrollbar whitespace-nowrap">
                     {Buttons.map((item, index) => (
                         <li
                             key={index}
                             ref={(el) => (btnRefs.current[index] = el)}
-                            className="inline-block w-[65%] sm:w-[40%] md:w-[22%] flex-shrink-0 text-center"
+                            className="inline-block w-[70%] sm:w-[40%] md:w-[22%] flex-shrink-0 text-center"
                         >
                             <button
                                 onClick={() => handleButtons(index)}

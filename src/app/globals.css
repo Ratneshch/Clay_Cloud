@@ -157,7 +157,21 @@ body {
 .animate-marquee {
   display: flex;
   width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
   animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes fadeInUp {
@@ -177,4 +191,9 @@ body {
 
 .hidescrollbar::-webkit-scrollbar{
   display: none;
+}
+
+.hidescrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }
