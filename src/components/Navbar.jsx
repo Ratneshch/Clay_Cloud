@@ -108,8 +108,8 @@ const Navbar = () => {
   };
 
   return (
-    <header ref={navRef} className="fixed top-0 left-0 w-full z-50 font-inter bg-white/80 backdrop-blur-sm shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-10 py-3">
+    <header ref={navRef} className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4 font-inter">
+        <div className="relative w-full border border-[#6c63ff] rounded-full bg-white/80 backdrop-blur-sm shadow-sm px-4 md:px-10 py-2.5 md:py-3 flex items-center">
         {/* Logo */}
         <button
           className="text-xl md:text-2xl font-heading font-bold text-slate-900 cursor-pointer"
@@ -119,7 +119,7 @@ const Navbar = () => {
         </button>
 
         {/* Desktop menu */}
-        <div className="hidden md:flex flex-1 justify-center gap-8 text-sm font-heading text-slate-700">
+        <div className="hidden md:flex flex-1 items-center justify-center gap-8 text-xs md:text-[16px] font-heading text-slate-700">
           {navItems.map((item) => {
             const isActive = openMenu === item.key;
 
@@ -147,7 +147,7 @@ const Navbar = () => {
 
                 {/* MEGA MENU NON-SERVICES */}
                 {isActive && item.key !== "outsourcing" && (
-                  <div className="fixed left-0 top-[70px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 py-10">
+                  <div className="fixed left-0 top-[60px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 py-10 rounded-2xl">
                     <div className="max-w-[1400px] mx-auto grid grid-cols-3 gap-10 px-10">
                       {item.columns.map((col) => (
                         <div key={col.title}>
@@ -174,7 +174,7 @@ const Navbar = () => {
 
                 {/* SERVICES MEGA MENU */}
                 {isActive && item.key === "outsourcing" && (
-                  <div className="fixed left-0 top-[70px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 py-10">
+                  <div className="fixed left-0 top-[60px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 py-10 rounded-2xl">
                     <div className="max-w-[1400px] mx-auto grid grid-cols-2 gap-10 px-10">
                       {/* LEFT COLUMN */}
                       <div>
@@ -251,6 +251,7 @@ const Navbar = () => {
           {isOpen ? <HiX className="h-5 w-5 text-slate-800" /> : <HiOutlineMenu className="h-5 w-5 text-slate-800" />}
         </button>
       </div>
+      
 
       {/* MOBILE MENU */}
       {isOpen && (
