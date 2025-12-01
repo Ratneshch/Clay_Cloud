@@ -17,6 +17,7 @@ const page = () => {
       <TechnologyMarquee/>
       <Services/>
       <Strategy/>
+      <ProductPage />
       <UseCase />
       <Serve />
       <AboutCloud />
