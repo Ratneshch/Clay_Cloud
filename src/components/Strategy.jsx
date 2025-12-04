@@ -87,15 +87,17 @@ const Strategy = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-br from-[#121A2D] to-[#1D3784] min-h-screen flex flex-col justify-center px-4 sm:px-6 md:px-6"
+       className="bg-gradient-to-br from-[#121A2D] to-[#1D3784] min-h-screen flex flex-col justify-center px-4 sm:px-6 md:px-6 pt-[100px]"
     >
       <h3
-        ref={headingRef}
-        className="text-[36px] sm:text-[42px] md:text-[48px] font-syne font-bold text-center max-w-[90%] sm:max-w-[678px] mx-auto"
-        style={{ color: "#4a5568" }}
-      >
-        Strategy & Advisory
-      </h3>
+  ref={headingRef}
+  className="font-syne font-bold text-center max-w-[90%] sm:max-w-[678px] mx-auto 
+  text-[28px] sm:text-[36px] md:text-[48px] leading-[1.1] break-words"
+  style={{ color: "#4a5568" }}
+>
+  Strategy & Advisory
+</h3>
+
 
       <p
         ref={subRef}
@@ -110,14 +112,14 @@ const Strategy = () => {
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-6 pt-8 md:pt-10 max-w-6xl mx-auto"
       >
         {cards.map((card, index) => (
-          <li key={index} className="card-item">
+          <li key={index} className="card-item mb-4 sm:mb-0">
             <div className="bg-[#FFFFFF1A] px-4 sm:px-6 py-6 rounded-[16px] border border-white/20 text-center shadow-lg backdrop-blur-md">
               <Image
                 src={card.icon}
                 alt={card.Name}
                 width={56}
                 height={56}
-                className="mx-auto mb-4"
+                className="mx-auto "
               />
               <h5 className="font-syne text-[20px] sm:text-[22px] md:text-[24px] font-bold text-white mb-3 pt-3">
                 {card.Name}
