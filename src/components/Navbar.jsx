@@ -66,7 +66,12 @@ const navItems = [
     columns: [
       {
         title: "Insights",
-        items: ["Media", "Case studies – Public & Private", "Blog", "Event & Webinars"],
+        items: [
+          "Media",
+          "Case studies – Public & Private",
+          "Blog",
+          "Event & Webinars",
+        ],
       },
     ],
   },
@@ -74,7 +79,10 @@ const navItems = [
 
 const consultingServicesList = [
   { name: "Data & AI Services", slug: "data-and-ai-services" },
-  { name: "Generative AI (GenAI) Solutions", slug: "generative-ai-genai-solutions" },
+  {
+    name: "Generative AI (GenAI) Solutions",
+    slug: "generative-ai-genai-solutions",
+  },
   { name: "DevOps & Cloud Engineering", slug: "devops-cloud-engineering" },
   { name: "Application Modernization", slug: "application-modernization" },
   { name: "UI/UX Design & Engineering", slug: "ui-ux-design-engineering" },
@@ -110,7 +118,8 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       const target = event.target;
       const navContains = navRef.current && navRef.current.contains(target);
-      const dropdownContains = dropdownRef.current && dropdownRef.current.contains(target);
+      const dropdownContains =
+        dropdownRef.current && dropdownRef.current.contains(target);
 
       if (!navContains && !dropdownContains) {
         setOpenMenu(null);
@@ -146,12 +155,12 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 border border-blue-400 rounded-full bg-white shadow-sm">
         <div className="relative flex items-center gap-3 h-14 md:h-16">
           {/* Logo */}
-          <button
+          <Link
+            href="/"
             className="text-base sm:text-lg md:text-xl font-heading font-bold text-slate-900 cursor-pointer"
-            onClick={() => handleClick("ClayCloud Technologies")}
           >
             ClayCloud Technologies
-          </button>
+          </Link>
 
           {/* Desktop menu */}
           <nav className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 text-xs sm:text-sm md:text-[16px] font-heading text-slate-700">
@@ -169,7 +178,9 @@ const Navbar = () => {
                   {/* MAIN LABEL */}
                   <button
                     className={`flex items-center gap-1 pb-1 sm:pb-2 border-b-2 transition-colors ${
-                      isActive ? "border-[#1545e6] text-[#1545e6]" : "border-transparent hover:text-slate-900"
+                      isActive
+                        ? "border-[#1545e6] text-[#1545e6]"
+                        : "border-transparent hover:text-slate-900"
                     }`}
                     aria-haspopup="true"
                     aria-expanded={isActive}
@@ -230,7 +241,9 @@ const Navbar = () => {
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 sm:px-10">
                         {/* LEFT COLUMN: Services */}
                         <div className="px-2 sm:px-0">
-                          <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">Services</h3>
+                          <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">
+                            Services
+                          </h3>
                           <ul className="space-y-3">
                             {item.columns[0].items.map((sub) => (
                               <li key={sub}>
@@ -241,12 +254,18 @@ const Navbar = () => {
                                       ? "text-[#1545e6] font-semibold"
                                       : "text-slate-800 hover:text-[#1545e6]"
                                   }`}
-                                  onMouseEnter={() => !isMobile && setOpenServiceChild(sub === "Consulting Services")}
+                                  onMouseEnter={() =>
+                                    !isMobile &&
+                                    setOpenServiceChild(
+                                      sub === "Consulting Services"
+                                    )
+                                  }
                                   onClick={() => {
                                     if (!isMobile) {
                                       /* desktop: hover-controlled */
                                     } else {
-                                      if (sub !== "Consulting Services") handleClick(sub);
+                                      if (sub !== "Consulting Services")
+                                        handleClick(sub);
                                     }
                                   }}
                                 >
@@ -259,7 +278,9 @@ const Navbar = () => {
 
                         {/* RIGHT COLUMN: Consulting Services */}
                         <div className="px-2 sm:px-0">
-                          <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">Consulting Services</h3>
+                          <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">
+                            Consulting Services
+                          </h3>
                           <ul className="grid grid-cols-1 sm:grid-cols-1 gap-y-3">
                             {consultingServicesList.map((s) => (
                               <Link
@@ -301,7 +322,11 @@ const Navbar = () => {
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
-            {isOpen ? <HiX className="h-5 w-5 text-slate-800" /> : <HiOutlineMenu className="h-5 w-5 text-slate-800" />}
+            {isOpen ? (
+              <HiX className="h-5 w-5 text-slate-800" />
+            ) : (
+              <HiOutlineMenu className="h-5 w-5 text-slate-800" />
+            )}
           </button>
         </div>
       </div>
@@ -316,10 +341,16 @@ const Navbar = () => {
                 <li key={item.key}>
                   <button
                     className="w-full text-left font-semibold py-2 cursor-pointer flex items-center justify-between"
-                    onClick={() => setOpenMobileKey((prev) => (prev === item.key ? null : item.key))}
+                    onClick={() =>
+                      setOpenMobileKey((prev) =>
+                        prev === item.key ? null : item.key
+                      )
+                    }
                   >
                     <span>{item.label}</span>
-                    <span className="text-slate-500 text-xs">{openMobileKey === item.key ? "-" : "+"}</span>
+                    <span className="text-slate-500 text-xs">
+                      {openMobileKey === item.key ? "-" : "+"}
+                    </span>
                   </button>
 
                   {openMobileKey === item.key && item.columns?.[0]?.items && (
@@ -343,7 +374,9 @@ const Navbar = () => {
                       {/* If this is Services item, show Consulting Services list below (mobile-friendly) */}
                       {item.key === "outsourcing" && (
                         <div className="mt-3">
-                          <h4 className="text-sm font-semibold text-[#1545e6] mb-2">Consulting Services</h4>
+                          <h4 className="text-sm font-semibold text-[#1545e6] mb-2">
+                            Consulting Services
+                          </h4>
                           <ul className="space-y-2 text-slate-700">
                             {consultingServicesList.map((s) => (
                               <li key={s.slug}>
