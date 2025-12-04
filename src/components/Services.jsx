@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react'
 import { GoDotFill } from "react-icons/go";
 import { BiSolidRightArrowSquare } from "react-icons/bi";
 import { services } from '@/data/services';
+import {motion} from "framer-motion"
 
 const Services = () => {
 
@@ -21,10 +22,20 @@ const Services = () => {
 
     return (
         <section className='pb-12 pt-6 text-center bg-white overflow-hidden'>
-
+            <motion.div
+        className="text-center mb-8 md:mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+      <div className="flex items-center justify-center flex-col">
             <h2 className='text-[24px] md:text-[48px] font-bold text-[#03045E]'>
                 Our Core Consulting Services
             </h2>
+            <div className="h-0.5 w-50 bg-linear-to-r from-blue-500 via-blue-400 to-cyan-300"></div>
+            </div>
+            </motion.div>
 
             <div className='md:pt-14 pt-8'>
 
