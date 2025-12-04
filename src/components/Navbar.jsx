@@ -187,7 +187,7 @@ const Navbar = () => {
                         setOpenMenu(null);
                         setOpenServiceChild(false);
                       }}
-                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-full bg-white border-t border-slate-200 shadow-xl z-50 mt-1 py-6 sm:py-8 rounded-b-lg overflow-auto"
+                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl ml-25 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg overflow-auto rounded-2xl"
                       style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-10">
@@ -224,7 +224,7 @@ const Navbar = () => {
                         setOpenMenu(null);
                         if (!isMobile) setOpenServiceChild(false);
                       }}
-                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-full bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto"
+                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto mt-4.5 rounded-2xl ml-25"
                       style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 sm:px-10">
@@ -287,7 +287,7 @@ const Navbar = () => {
           {/* Contact Button */}
           <div className="hidden md:inline-flex ml-auto">
             <button
-              className="rounded-md px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
+              className="rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
               onClick={() => handleClick("Contact")}
             >
               Contact
