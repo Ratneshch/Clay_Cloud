@@ -7,6 +7,9 @@ import { FaServer } from "react-icons/fa6";
 import { IoHardwareChipOutline } from "react-icons/io5";
 import { FaCloud } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
+import brain from "@/assets/Brain.png"
+
+
 import {motion} from 'framer-motion'
 
 const Page = () => {
@@ -69,43 +72,68 @@ const Page = () => {
               </p>
             </div>
           </section>
-          <section className='mt-10'>
-             <div className='flex'>
-                <div className=' p-16'>
-                   <h1 className='font-inter text-[26px] sm:text-[28px] md:text-[30px] font-bold  text-[#1545e6] text-start'>{service.tag1}</h1>
-                   <ul>
-                    {
-                        service.values.map((value ,i)=>(
-                            <li key={i}>
-                                <p className='font-inter text-[14px] sm:text-[14px] md:text-[16px] text-[#374151] mt-4 text-start'><GoDotFill className='inline mr-2 size-5 text-[#5179fc] ml-6'/>{value}</p>
-                            </li>
-                        ))
-                    }
-                   </ul>
-                </div>
-               <div className="w-full md:w-[20%] pt-10">
-            <motion.div animate={{
-                x:0,
-                y:[0,20,0,20,0]
-               }}
-               transition={{
-                duration:5,
-                repeat:Infinity,
-               }}
-                className="hidden md:block w-[40%] h-[350px] absolute right-10 ">
-                  <img
-                   src={service.images[0].src}
-                   alt={service.Name}
-                   className="w-full h-full object-cover rounded-3xl shadow-2xl"
-                   />
-            </motion.div>
-        </div>
+           <section className="md:mt-10">
+  <div className="flex flex-col md:flex-row">
+    
+    {/* LEFT CONTENT */}
+    <div className="md:p-16 px-4">
+      <h1 className="text-3xl md:text-3xl lg:text-[68px] font-bold text-slate-900">
+        <span className="block text-transparent bg-clip-text bg-linear-to-r from-[#2563EB] via-[#2563EB] to-[#22C55E]">
+          {service.tag1}
+        </span>
+      </h1>
 
-             </div>
-          </section>
+      <ul>
+        {service.values.map((value, i) => (
+          <li key={i}>
+            <p className="font-inter text-[14px] md:text-[16px] text-[#374151] mt-4 text-start">
+              <GoDotFill className="inline mr-2 size-5 text-[#5179fc] ml-2 md:ml-6" />
+              {value}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* RIGHT IMAGE — MOBILE FIXED */}
+    <div className="w-full md:w-[20%] pt-6 md:pt-10 flex justify-center md:block">
+      <motion.div
+        animate={{ x: 0, y: [0, 20, 0, 20, 0] }}
+        transition={{ duration: 5, repeat: Infinity }}
+        className="w-[70%] sm:w-[50%] md:w-[40%] h-[200px] sm:h-[250px] md:h-[350px] md:absolute md:right-10"
+      >
+        <img
+          src={service.images[0].src}
+          alt={service.Name}
+          className="w-full h-full object-cover rounded-3xl shadow-2xl"
+        />
+      </motion.div>
+    </div>
+
+   </div>
+        </section>
           <section className=''>
-            <div className='p-10'>
-                <h1 className='font-inter text-[26px] sm:text-[28px] md:text-[30px] font-bold  text-[#1545e6] text-start'>{service.tag2}</h1>
+            <div className="w-full bg-[#f7f7f7] rounded-3xl px-8 py-10 flex flex-col items-center mt-15 justify-center">
+              <h2 className="text-3xl text-black text-center font-bold mb-10">{service.tag2}</h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl text-center">
+                  {service.values2.map((item, index) => (
+                      <div key={index} className="flex flex-col items-center justify-center gap-4">
+                         <motion.div whileHover={{
+                          scale:0.8
+                         }}>
+                            <img src={brain.src}  alt="icon" />
+                         </motion.div>
+                          <h3 className="text-lg font-semibold text-black w-[70%]">{item}</h3>
+                      </div>
+                  ))}
+              </div>
+          </div>
+          </section>
+          <section className='pt-10'>
+             <div className='flex items-center justify-center flex-col'>
+                <h1 className=' font-inter text-[30px] mb-4 text-center font-bold sm:w-full text-black '>{service.text}</h1>
+              <div className='h-0.5 w-50 bg-linear-to-r from-blue-500 via-blue-400 to-cyan-300'></div>
             </div>
           </section>
     </>
