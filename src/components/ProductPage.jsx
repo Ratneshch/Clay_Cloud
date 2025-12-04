@@ -1,8 +1,8 @@
 // ProductPage.jsx
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { products } from "@/data/products";
 
 import { RiRobot2Fill } from "react-icons/ri";
@@ -84,12 +84,20 @@ export default function ProductPage() {
   // -----------------------------------------
   // Product Page UI
   // -----------------------------------------
+const ref = useRef(null);
+
+const isInView = useInView(ref, {
+    margin: "-100px", // trigger earlier
+    once: true,       // run only one time
+  });
+
   return (
     <main className="px-4 sm:px-6 md:px-10 lg:px-20 py-10 max-w-screen-xl mx-auto">
       {/* Heading */}
       <motion.div
         className="text-center mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
+        viewport={{ once: true }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
@@ -102,6 +110,13 @@ export default function ProductPage() {
       </motion.div>
 
       {/* Cards Grid */}
+      <motion.div
+      ref={ref}
+      className="text-center mb-8 md:mb-12"
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-8 lg:gap-30">
         {products.map((item) => (
           <ProductCard
@@ -115,6 +130,7 @@ export default function ProductPage() {
           />
         ))}
       </div>
+    </motion.div>
     </main>
   );
 }
