@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// Navbar items
+// Navbar items (unchanged)
 const navItems = [
   {
     label: "Industries",
@@ -72,51 +72,38 @@ const navItems = [
   },
 ];
 
-// Submenu for "Consulting Services"
 const consultingServicesList = [
-  {
-    name: "Data & AI Services",
-    slug: "data-and-ai-services"
-  },
-  {
-    name: "Generative AI (GenAI) Solutions",
-    slug: "generative-ai-genai-solutions"
-  },
-  {
-    name: "DevOps & Cloud Engineering",
-    slug: "devops-cloud-engineering"
-  },
-  {
-    name: "Application Modernization",
-    slug: "application-modernization"
-  },
-  {
-    name: "UI/UX Design & Engineering",
-    slug: "ui-ux-design-engineering"
-  },
-  {
-    name: "Cybersecurity Services",
-    slug: "cybersecurity-services"
-  },
-  {
-    name: "Managed Services",
-    slug: "managed-services"
-  },
-  {
-    name: "Cloud Consulting & Advisory",
-    slug: "cloud-consulting-advisory"
-  }
+  { name: "Data & AI Services", slug: "data-and-ai-services" },
+  { name: "Generative AI (GenAI) Solutions", slug: "generative-ai-genai-solutions" },
+  { name: "DevOps & Cloud Engineering", slug: "devops-cloud-engineering" },
+  { name: "Application Modernization", slug: "application-modernization" },
+  { name: "UI/UX Design & Engineering", slug: "ui-ux-design-engineering" },
+  { name: "Cybersecurity Services", slug: "cybersecurity-services" },
+  { name: "Managed Services", slug: "managed-services" },
+  { name: "Cloud Consulting & Advisory", slug: "cloud-consulting-advisory" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // mobile menu
   const [openMenu, setOpenMenu] = useState(null); // which desktop dropdown is open
-  const [openServiceChild, setOpenServiceChild] = useState(false); // consulting submenu
+  const [openServiceChild, setOpenServiceChild] = useState(false); // consulting submenu (desktop)
   const [openMobileKey, setOpenMobileKey] = useState(null); // mobile submenu
+  const [isMobile, setIsMobile] = useState(false); // track small screens (touch)
   const navRef = useRef(null);
   const dropdownRef = useRef(null); // ref for the currently rendered dropdown
 
   const pathname = usePathname();
+
+  // detect mobile breakpoint
+  useEffect(() => {
+    const checkMobile = () => {
+      if (typeof window === "undefined") return;
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Close dropdowns when clicking outside (but NOT when clicking inside dropdown)
   useEffect(() => {
@@ -125,7 +112,6 @@ const Navbar = () => {
       const navContains = navRef.current && navRef.current.contains(target);
       const dropdownContains = dropdownRef.current && dropdownRef.current.contains(target);
 
-      // if click is outside both nav and dropdown -> close everything
       if (!navContains && !dropdownContains) {
         setOpenMenu(null);
         setOpenServiceChild(false);
@@ -140,7 +126,6 @@ const Navbar = () => {
 
   // Close dropdowns after navigation (route change)
   useEffect(() => {
-    // whenever pathname changes (navigation completed), close menus
     setOpenMenu(null);
     setOpenServiceChild(false);
     setIsOpen(false);
@@ -152,66 +137,118 @@ const Navbar = () => {
   };
 
   return (
-    <header ref={navRef} className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4 font-inter">
-      <div className="relative w-full border border-[#6c63ff] rounded-full bg-white/80 backdrop-blur-sm shadow-sm px-4 md:px-10 py-2.5 md:py-3 flex items-center">
-        {/* Logo */}
-        <button
-          className="text-xl md:text-2xl font-heading font-bold text-slate-900 cursor-pointer"
-          onClick={() => handleClick("ClayCloud Technologies")}
-        >
-          ClayCloud Technologies
-        </button>
+    <header
+      ref={navRef}
+      className="fixed inset-x-0 top-4 z-50 pointer-events-auto"
+      aria-label="Main navigation"
+    >
+      {/* === CLEAN SMALL NAVBAR: no blur, no outer white === */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 border border-blue-400 rounded-full bg-white shadow-sm">
+        <div className="relative flex items-center gap-3 h-14 md:h-16">
+          {/* Logo */}
+          <button
+            className="text-base sm:text-lg md:text-xl font-heading font-bold text-slate-900 cursor-pointer"
+            onClick={() => handleClick("ClayCloud Technologies")}
+          >
+            ClayCloud Technologies
+          </button>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex flex-1 items-center justify-center gap-8 text-xs md:text-[16px] font-heading text-slate-700">
-          {navItems.map((item) => {
-            const isActive = openMenu === item.key;
+          {/* Desktop menu */}
+          <nav className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 text-xs sm:text-sm md:text-[16px] font-heading text-slate-700">
+            {navItems.map((item) => {
+              const isActive = openMenu === item.key;
 
-            return (
-              <div
-                key={item.key}
-                className="relative"
-                onMouseEnter={() => setOpenMenu(item.key)} // open on hover
-                // removed onMouseLeave here so small gaps don't close the menu
-              >
-                {/* MAIN LABEL */}
-                <button
-                  className={`flex items-center gap-1 pb-3 border-b-2 transition-colors ${
-                    isActive
-                      ? "border-[#1545e6] text-[#1545e6]"
-                      : "border-transparent hover:text-slate-900"
-                  }`}
+              return (
+                <div
+                  key={item.key}
+                  className="relative"
+                  onMouseEnter={() => {
+                    setOpenMenu(item.key);
+                  }}
                 >
-                  {item.label}
-                  <ChevronDown size={14} />
-                </button>
-
-                {/* MEGA MENU NON-SERVICES */}
-                {isActive && item.key !== "outsourcing" && (
-                  <div
-                    ref={dropdownRef}
-                    // keep open while mouse is over the dropdown, close when it leaves
-                    onMouseEnter={() => setOpenMenu(item.key)}
-                    onMouseLeave={() => {
-                      setOpenMenu(null);
-                      setOpenServiceChild(false);
-                    }}
-                    className="fixed left-0 top-[60px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 mt-1 py-10 rounded-2xl"
+                  {/* MAIN LABEL */}
+                  <button
+                    className={`flex items-center gap-1 pb-1 sm:pb-2 border-b-2 transition-colors ${
+                      isActive ? "border-[#1545e6] text-[#1545e6]" : "border-transparent hover:text-slate-900"
+                    }`}
+                    aria-haspopup="true"
+                    aria-expanded={isActive}
                   >
-                    <div className="max-w-[1400px] mx-auto grid grid-cols-3 gap-10 px-10">
-                      {item.columns.map((col) => (
-                        <div key={col.title}>
-                          <h3 className="text-lg font-semibold text-[#1545e6] mb-3">
-                            {col.title}
-                          </h3>
-                          <ul className="space-y-2">
-                            {col.items.map((sub) => (
+                    {item.label}
+                    <ChevronDown size={14} />
+                  </button>
+
+                  {/* MEGA MENU NON-SERVICES */}
+                  {isActive && item.key !== "outsourcing" && (
+                    <div
+                      ref={dropdownRef}
+                      onMouseEnter={() => setOpenMenu(item.key)}
+                      onMouseLeave={() => {
+                        setOpenMenu(null);
+                        setOpenServiceChild(false);
+                      }}
+                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-full bg-white border-t border-slate-200 shadow-xl z-50 mt-1 py-6 sm:py-8 rounded-b-lg overflow-auto"
+                      style={{ WebkitOverflowScrolling: "touch" }}
+                    >
+                      <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-10">
+                        {item.columns.map((col) => (
+                          <div key={col.title} className="px-2 sm:px-0">
+                            <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">
+                              {col.title}
+                            </h3>
+                            <ul className="space-y-2">
+                              {col.items.map((sub) => (
+                                <li key={sub}>
+                                  <button
+                                    onMouseDown={(e) => e.stopPropagation()}
+                                    className="w-full text-left text-sm sm:text-base text-slate-800 hover:text-[#1545e6]"
+                                    onClick={() => handleClick(sub)}
+                                  >
+                                    {sub}
+                                  </button>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* SERVICES MEGA MENU */}
+                  {isActive && item.key === "outsourcing" && (
+                    <div
+                      ref={dropdownRef}
+                      onMouseEnter={() => setOpenMenu(item.key)}
+                      onMouseLeave={() => {
+                        setOpenMenu(null);
+                        if (!isMobile) setOpenServiceChild(false);
+                      }}
+                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-full bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto"
+                      style={{ WebkitOverflowScrolling: "touch" }}
+                    >
+                      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 sm:px-10">
+                        {/* LEFT COLUMN: Services */}
+                        <div className="px-2 sm:px-0">
+                          <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">Services</h3>
+                          <ul className="space-y-3">
+                            {item.columns[0].items.map((sub) => (
                               <li key={sub}>
                                 <button
-                                  // non-navigation internal items keep stopPropagation to avoid closing
                                   onMouseDown={(e) => e.stopPropagation()}
-                                  className="w-full text-left text-sm text-slate-800 hover:text-[#1545e6]"
-                                  onClick={() => handleClick(sub)}
+                                  className={`w-full text-left text-sm sm:text-base ${
+                                    sub === "Consulting Services"
+                                      ? "text-[#1545e6] font-semibold"
+                                      : "text-slate-800 hover:text-[#1545e6]"
+                                  }`}
+                                  onMouseEnter={() => !isMobile && setOpenServiceChild(sub === "Consulting Services")}
+                                  onClick={() => {
+                                    if (!isMobile) {
+                                      /* desktop: hover-controlled */
+                                    } else {
+                                      if (sub !== "Consulting Services") handleClick(sub);
+                                    }
+                                  }}
                                 >
                                   {sub}
                                 </button>
@@ -219,142 +256,124 @@ const Navbar = () => {
                             ))}
                           </ul>
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
 
-                {/* SERVICES MEGA MENU */}
-                {isActive && item.key === "outsourcing" && (
-                  <div
-                    ref={dropdownRef}
-                    onMouseEnter={() => setOpenMenu(item.key)}
-                    onMouseLeave={() => {
-                      setOpenMenu(null);
-                      setOpenServiceChild(false);
-                    }}
-                    className="fixed left-0 top-[60px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 py-10 rounded-2xl"
-                  >
-                    <div className="max-w-[1400px] mx-auto grid grid-cols-2 gap-10 px-10">
-                      {/* LEFT COLUMN */}
-                      <div>
-                        <h3 className="text-lg font-semibold text-[#1545e6] mb-3">Services</h3>
-                        <ul className="space-y-3">
-                          {item.columns[0].items.map((sub) => (
-                            <li key={sub}>
-                              <button
-                                onMouseDown={(e) => e.stopPropagation()}
-                                className={`w-full text-left text-sm ${
-                                  sub === "Consulting Services"
-                                    ? "text-[#1545e6] font-semibold"
-                                    : "text-slate-800 hover:text-[#1545e6]"
-                                }`}
-                                onMouseEnter={() =>
-                                  setOpenServiceChild(sub === "Consulting Services")
-                                }
-                                onClick={() => handleClick(sub)}
+                        {/* RIGHT COLUMN: Consulting Services */}
+                        <div className="px-2 sm:px-0">
+                          <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">Consulting Services</h3>
+                          <ul className="grid grid-cols-1 sm:grid-cols-1 gap-y-3">
+                            {consultingServicesList.map((s) => (
+                              <Link
+                                key={s.slug}
+                                href={`/services/${s.slug}`}
+                                className="text-sm sm:text-base w-full text-left text-slate-800 hover:text-[#1545e6] block"
+                                onClick={() => {
+                                  handleClick(s);
+                                  if (isMobile) setOpenMenu(null);
+                                }}
                               >
-                                {sub}
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* RIGHT PANEL */}
-                      <div>
-                        {openServiceChild ? (
-                          <>
-                            <h3 className="text-lg font-semibold text-[#1545e6] mb-3">
-                              Consulting Services
-                            </h3>
-                            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
-                              {consultingServicesList.map((s) => (
-                                <Link
-                                  key={s.slug}
-                                  href={`/services/${s.slug}`}
-                                  // removed stopPropagation here so navigation occurs normally,
-                                  // and our pathname effect will close the dropdown after navigation.
-                                  className="text-sm w-full text-left text-slate-800 hover:text-[#1545e6]"
-                                  onClick={() => handleClick(s)}
-                                >
-                                  {s.name}
-                                </Link>
-                              ))}
-                            </ul>
-                          </>
-                        ) : (
-                          <p className="text-sm text-slate-600 mt-2">
-                            Hover on <strong>Consulting Services</strong> to view details.
-                          </p>
-                        )}
+                                {s.name}
+                              </Link>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                  )}
+                </div>
+              );
+            })}
+          </nav>
+
+          {/* Contact Button */}
+          <div className="hidden md:inline-flex ml-auto">
+            <button
+              className="rounded-md px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
+              onClick={() => handleClick("Contact")}
+            >
+              Contact
+            </button>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            className="ml-auto md:hidden inline-flex items-center justify-center p-2 rounded-md border border-slate-200 bg-white"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <HiX className="h-5 w-5 text-slate-800" /> : <HiOutlineMenu className="h-5 w-5 text-slate-800" />}
+          </button>
         </div>
-
-        {/* Contact Button */}
-        <button
-          className="hidden md:inline-flex ml-auto rounded-full px-6 py-2 text-sm font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
-          onClick={() => handleClick("Contact")}
-        >
-          Contact
-        </button>
-
-        {/* Mobile toggle */}
-        <button
-          className="ml-auto md:hidden inline-flex items-center justify-center rounded-full p-2 border border-slate-200 bg-white/80"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Toggle navigation menu"
-        >
-          {isOpen ? <HiX className="h-5 w-5 text-slate-800" /> : <HiOutlineMenu className="h-5 w-5 text-slate-800" />}
-        </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU (hamburger) */}
       {isOpen && (
-        <div className="md:hidden mt-2 w-full">
-          <div className="rounded-2xl bg-white/95 backdrop-blur-sm shadow-md border border-slate-100 py-3 px-4">
+        <div className="md:hidden w-full bg-white border-b border-slate-100">
+          {/* SCROLLABLE MOBILE MENU */}
+          <div className="px-4 py-3 max-h-[75vh] overflow-y-auto overscroll-contain">
             <ul className="flex flex-col gap-2 text-sm text-slate-800">
               {navItems.map((item) => (
                 <li key={item.key}>
                   <button
-                    className="w-full text-left font-semibold py-1 cursor-pointer"
-                    onClick={() =>
-                      setOpenMobileKey((prev) => (prev === item.key ? null : item.key))
-                    }
+                    className="w-full text-left font-semibold py-2 cursor-pointer flex items-center justify-between"
+                    onClick={() => setOpenMobileKey((prev) => (prev === item.key ? null : item.key))}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    <span className="text-slate-500 text-xs">{openMobileKey === item.key ? "-" : "+"}</span>
                   </button>
 
-                  {openMobileKey === item.key &&
-                    item.columns &&
-                    item.columns[0] &&
-                    item.columns[0].items && (
-                      <ul className="pl-3 pt-1 space-y-1 text-slate-600">
-                        {item.columns[0].items.map((subItem) => (
-                          <li key={subItem}>
+                  {openMobileKey === item.key && item.columns?.[0]?.items && (
+                    <div className="pl-3 pt-1">
+                      <ul className="space-y-1 text-slate-700">
+                        {item.columns[0].items.map((sub) => (
+                          <li key={sub}>
                             <button
-                              className="w-full text-left text-[13px] leading-snug hover:text-slate-900 cursor-pointer"
-                              onClick={() => handleClick(subItem)}
+                              className="w-full text-left text-[13px] leading-snug hover:text-slate-900 cursor-pointer py-1"
+                              onClick={() => {
+                                handleClick(sub);
+                                setIsOpen(false);
+                              }}
                             >
-                              {subItem}
+                              {sub}
                             </button>
                           </li>
                         ))}
                       </ul>
-                    )}
+
+                      {/* If this is Services item, show Consulting Services list below (mobile-friendly) */}
+                      {item.key === "outsourcing" && (
+                        <div className="mt-3">
+                          <h4 className="text-sm font-semibold text-[#1545e6] mb-2">Consulting Services</h4>
+                          <ul className="space-y-2 text-slate-700">
+                            {consultingServicesList.map((s) => (
+                              <li key={s.slug}>
+                                <Link
+                                  href={`/services/${s.slug}`}
+                                  className="block text-sm leading-snug hover:text-slate-900"
+                                  onClick={() => {
+                                    handleClick(s);
+                                    setIsOpen(false);
+                                  }}
+                                >
+                                  {s.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
 
             <button
-              className="mt-3 w-full rounded-full px-4 py-2 text-sm font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
-              onClick={() => handleClick("Contact")}
+              className="mt-3 w-full rounded-md px-4 py-2 text-sm font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
+              onClick={() => {
+                handleClick("Contact");
+                setIsOpen(false);
+              }}
             >
               Contact
             </button>
