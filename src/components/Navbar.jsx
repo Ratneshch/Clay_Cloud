@@ -163,7 +163,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop menu */}
-          <nav className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 text-xs sm:text-sm md:text-[16px] font-heading text-slate-700">
+          <nav className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 text-xs mt-2 sm:text-sm md:text-[16px] font-heading text-slate-700">
             {navItems.map((item) => {
               const isActive = openMenu === item.key;
 
