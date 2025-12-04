@@ -109,7 +109,7 @@ const Strategy = () => {
 
       <ul
         ref={cardsRef}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-6 pt-8 md:pt-10 max-w-6xl mx-auto"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-6 pt-8 sm:pt-10 pb-10 sm:pb-15 max-w-6xl mx-auto"
       >
         {cards.map((card, index) => (
           <li key={index} className="card-item mb-4 sm:mb-0">
