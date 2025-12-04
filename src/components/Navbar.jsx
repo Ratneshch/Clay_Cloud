@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 // Navbar items
 const navItems = [
@@ -72,15 +73,40 @@ const navItems = [
 
 // Submenu for "Consulting Services"
 const consultingServicesList = [
-  "Data & AI Services",
-  "Generative AI (GenAI) Solutions",
-  "DevOps & Cloud Engineering",
-  "Application Modernization",
-  "UI/UX Design & Engineering",
-  "Cybersecurity Services",
-  "Managed Services",
-  "Cloud Consulting & Advisory",
+  {
+    name: "Data & AI Services",
+    slug: "data-and-ai-services"
+  },
+  {
+    name: "Generative AI (GenAI) Solutions",
+    slug: "generative-ai-genai-solutions"
+  },
+  {
+    name: "DevOps & Cloud Engineering",
+    slug: "devops-cloud-engineering"
+  },
+  {
+    name: "Application Modernization",
+    slug: "application-modernization"
+  },
+  {
+    name: "UI/UX Design & Engineering",
+    slug: "ui-ux-design-engineering"
+  },
+  {
+    name: "Cybersecurity Services",
+    slug: "cybersecurity-services"
+  },
+  {
+    name: "Managed Services",
+    slug: "managed-services"
+  },
+  {
+    name: "Cloud Consulting & Advisory",
+    slug: "cloud-consulting-advisory"
+  }
 ];
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // mobile menu
@@ -209,14 +235,12 @@ const Navbar = () => {
                             </h3>
                             <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
                               {consultingServicesList.map((s) => (
-                                <li key={s}>
-                                  <button
+                                  <Link  key={s.slug} href={`/services/${s.slug}`}
                                     className="text-sm w-full text-left text-slate-800 hover:text-[#1545e6]"
                                     onClick={() => handleClick(s)}
                                   >
-                                    {s}
-                                  </button>
-                                </li>
+                                    {s.name}
+                                </Link>
                               ))}
                             </ul>
                           </>
