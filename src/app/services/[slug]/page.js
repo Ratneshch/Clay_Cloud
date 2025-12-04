@@ -107,11 +107,6 @@ const Page = () => {
             <div className='p-10'>
                 <h1 className='font-inter text-[26px] sm:text-[28px] md:text-[30px] font-bold  text-[#1545e6] text-start'>{service.tag2}</h1>
             </div>
-            <div>
-                {
-
-                }
-            </div>
           </section>
     </>
   )
