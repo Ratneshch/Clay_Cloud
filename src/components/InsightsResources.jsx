@@ -25,17 +25,31 @@ export default function InsightsResources() {
 
   return (
     <section className="px-4 sm:px-6 lg:px-20 py-16">
-      <div className="text-center mb-10">
+
+      {/* Section Title Animation */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="text-center mb-10"
+      >
         <h2 className="text-3xl sm:text-[48px] font-bold">
           Insights & <span className="text-blue-500">Resources</span>
         </h2>
         <p className="text-gray-500 mt-2">
           Stay updated with the latest trends and insights
         </p>
-      </div>
+      </motion.div>
 
-      {/* Filter Buttons (horizontal scroll) */}
-      <div className="overflow-x-auto hide-scrollbar mb-10">
+      {/* Filter Buttons */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="overflow-x-auto hide-scrollbar mb-10"
+      >
         <div className="flex gap-3 min-w-max justify-center">
           {filterTypes.map((filter) => (
             <button
@@ -51,19 +65,20 @@ export default function InsightsResources() {
             </button>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      {/* Cards (horizontal scroll without scrollbar) */}
+      {/* Cards - Scroll animation + filter animation */}
       <div className="overflow-x-auto hide-scrollbar -mx-4 px-4">
         <motion.div className="flex gap-6 min-w-max justify-center my-10">
           <AnimatePresence>
             {filteredData.map((item, index) => (
               <motion.div
                 key={item.id}
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.4 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px]"
               >
                 <img
@@ -71,6 +86,7 @@ export default function InsightsResources() {
                   alt={item.title}
                   className="w-full h-48 object-cover"
                 />
+
                 <div className="p-5">
                   <span
                     className={`text-xs font-medium font-inter text-black px-2 py-1 sm:px-3 rounded-full ${
@@ -79,8 +95,15 @@ export default function InsightsResources() {
                   >
                     {item.type}
                   </span>
-                  <h3 className="mt-2 text-lg font-inter font-semibold">{item.title}</h3>
-                  <p className="mt-1 text-gray-500 font-inter text-sm">{item.description}</p>
+
+                  <h3 className="mt-2 text-lg font-inter font-semibold">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-1 text-gray-500 font-inter text-sm">
+                    {item.description}
+                  </p>
+
                   <a
                     href={item.linkUrl}
                     className="mt-3 inline-block text-blue-500 font-inter font-medium hover:underline"
@@ -94,14 +117,19 @@ export default function InsightsResources() {
         </motion.div>
       </div>
 
-      {/* View All Button */}
-      <div className="flex justify-center mt-10">
+      {/* View All Button (Fade In) */}
+      <motion.div
+        className="flex justify-center mt-10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <button className="bg-gradient-to-r from-blue-400 to-blue-600 text-white font-inter px-6 py-3 rounded-full font-medium hover:opacity-90 transition">
           View All
         </button>
-      </div>
+      </motion.div>
 
-     
     </section>
   );
 }

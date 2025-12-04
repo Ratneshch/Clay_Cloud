@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 
 const ServeCard = ({title, description, icon, bgcolor, iconolor, textcolor, bordercolor}) => {
@@ -6,7 +7,7 @@ const ServeCard = ({title, description, icon, bgcolor, iconolor, textcolor, bord
       className="
         w-full sm:w-[280px] md:w-[310px] lg:w-[350px]
         h-60
-        rounded-2xl px-6  flex flex-col
+        rounded-2xl px-6 flex flex-col
         items-center text-center
         transition-shadow duration-300
         border
@@ -20,7 +21,7 @@ const ServeCard = ({title, description, icon, bgcolor, iconolor, textcolor, bord
         <img src={icon.src} alt={title} className="h-8 w-8" />
       </div>
 
-      <h3 className="text-[18px] sm:text-[20px]  font-syne mb-2 mt-2 font-bold" style={{ color: textcolor }}>
+      <h3 className="text-[18px] sm:text-[20px] font-syne mb-2 mt-2 font-bold" style={{ color: textcolor }}>
         {title}
       </h3>
       
