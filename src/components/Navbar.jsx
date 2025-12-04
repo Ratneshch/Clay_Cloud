@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // Navbar items
 const navItems = [
@@ -107,27 +108,44 @@ const consultingServicesList = [
   }
 ];
 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // mobile menu
   const [openMenu, setOpenMenu] = useState(null); // which desktop dropdown is open
   const [openServiceChild, setOpenServiceChild] = useState(false); // consulting submenu
   const [openMobileKey, setOpenMobileKey] = useState(null); // mobile submenu
   const navRef = useRef(null);
+  const dropdownRef = useRef(null); // ref for the currently rendered dropdown
 
-  // Close dropdowns when clicking outside
+  const pathname = usePathname();
+
+  // Close dropdowns when clicking outside (but NOT when clicking inside dropdown)
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
+      const target = event.target;
+      const navContains = navRef.current && navRef.current.contains(target);
+      const dropdownContains = dropdownRef.current && dropdownRef.current.contains(target);
+
+      // if click is outside both nav and dropdown -> close everything
+      if (!navContains && !dropdownContains) {
         setOpenMenu(null);
         setOpenServiceChild(false);
         setIsOpen(false);
         setOpenMobileKey(null);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Close dropdowns after navigation (route change)
+  useEffect(() => {
+    // whenever pathname changes (navigation completed), close menus
+    setOpenMenu(null);
+    setOpenServiceChild(false);
+    setIsOpen(false);
+    setOpenMobileKey(null);
+  }, [pathname]);
 
   const handleClick = (label) => {
     console.log("Clicked:", label);
@@ -135,7 +153,7 @@ const Navbar = () => {
 
   return (
     <header ref={navRef} className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4 font-inter">
-        <div className="relative w-full border border-[#6c63ff] rounded-full bg-white/80 backdrop-blur-sm shadow-sm px-4 md:px-10 py-2.5 md:py-3 flex items-center">
+      <div className="relative w-full border border-[#6c63ff] rounded-full bg-white/80 backdrop-blur-sm shadow-sm px-4 md:px-10 py-2.5 md:py-3 flex items-center">
         {/* Logo */}
         <button
           className="text-xl md:text-2xl font-heading font-bold text-slate-900 cursor-pointer"
@@ -153,11 +171,8 @@ const Navbar = () => {
               <div
                 key={item.key}
                 className="relative"
-                onMouseEnter={() => setOpenMenu(item.key)}
-                onMouseLeave={() => {
-                  setOpenMenu(null);
-                  setOpenServiceChild(false);
-                }}
+                onMouseEnter={() => setOpenMenu(item.key)} // open on hover
+                // removed onMouseLeave here so small gaps don't close the menu
               >
                 {/* MAIN LABEL */}
                 <button
@@ -173,7 +188,16 @@ const Navbar = () => {
 
                 {/* MEGA MENU NON-SERVICES */}
                 {isActive && item.key !== "outsourcing" && (
-                  <div className="fixed left-0 top-[60px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 py-10 rounded-2xl">
+                  <div
+                    ref={dropdownRef}
+                    // keep open while mouse is over the dropdown, close when it leaves
+                    onMouseEnter={() => setOpenMenu(item.key)}
+                    onMouseLeave={() => {
+                      setOpenMenu(null);
+                      setOpenServiceChild(false);
+                    }}
+                    className="fixed left-0 top-[60px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 mt-1 py-10 rounded-2xl"
+                  >
                     <div className="max-w-[1400px] mx-auto grid grid-cols-3 gap-10 px-10">
                       {item.columns.map((col) => (
                         <div key={col.title}>
@@ -184,6 +208,8 @@ const Navbar = () => {
                             {col.items.map((sub) => (
                               <li key={sub}>
                                 <button
+                                  // non-navigation internal items keep stopPropagation to avoid closing
+                                  onMouseDown={(e) => e.stopPropagation()}
                                   className="w-full text-left text-sm text-slate-800 hover:text-[#1545e6]"
                                   onClick={() => handleClick(sub)}
                                 >
@@ -200,7 +226,15 @@ const Navbar = () => {
 
                 {/* SERVICES MEGA MENU */}
                 {isActive && item.key === "outsourcing" && (
-                  <div className="fixed left-0 top-[60px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 py-10 rounded-2xl">
+                  <div
+                    ref={dropdownRef}
+                    onMouseEnter={() => setOpenMenu(item.key)}
+                    onMouseLeave={() => {
+                      setOpenMenu(null);
+                      setOpenServiceChild(false);
+                    }}
+                    className="fixed left-0 top-[60px] w-screen bg-white border-t border-slate-200 shadow-xl animate-fadeIn z-50 py-10 rounded-2xl"
+                  >
                     <div className="max-w-[1400px] mx-auto grid grid-cols-2 gap-10 px-10">
                       {/* LEFT COLUMN */}
                       <div>
@@ -209,6 +243,7 @@ const Navbar = () => {
                           {item.columns[0].items.map((sub) => (
                             <li key={sub}>
                               <button
+                                onMouseDown={(e) => e.stopPropagation()}
                                 className={`w-full text-left text-sm ${
                                   sub === "Consulting Services"
                                     ? "text-[#1545e6] font-semibold"
@@ -235,11 +270,15 @@ const Navbar = () => {
                             </h3>
                             <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
                               {consultingServicesList.map((s) => (
-                                  <Link  key={s.slug} href={`/services/${s.slug}`}
-                                    className="text-sm w-full text-left text-slate-800 hover:text-[#1545e6]"
-                                    onClick={() => handleClick(s)}
-                                  >
-                                    {s.name}
+                                <Link
+                                  key={s.slug}
+                                  href={`/services/${s.slug}`}
+                                  // removed stopPropagation here so navigation occurs normally,
+                                  // and our pathname effect will close the dropdown after navigation.
+                                  className="text-sm w-full text-left text-slate-800 hover:text-[#1545e6]"
+                                  onClick={() => handleClick(s)}
+                                >
+                                  {s.name}
                                 </Link>
                               ))}
                             </ul>
@@ -275,7 +314,6 @@ const Navbar = () => {
           {isOpen ? <HiX className="h-5 w-5 text-slate-800" /> : <HiOutlineMenu className="h-5 w-5 text-slate-800" />}
         </button>
       </div>
-      
 
       {/* MOBILE MENU */}
       {isOpen && (
