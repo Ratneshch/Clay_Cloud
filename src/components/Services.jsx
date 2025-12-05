@@ -4,6 +4,7 @@ import { GoDotFill } from "react-icons/go";
 import { BiSolidRightArrowSquare } from "react-icons/bi";
 import { services } from '@/data/services';
 import {motion} from "framer-motion"
+import Link from 'next/link';
 
 const Services = () => {
 
@@ -20,6 +21,7 @@ const Services = () => {
         })
     }
 
+   
     return (
         <section className='pb-12 pt-6 text-center bg-white overflow-hidden'>
             <motion.div
@@ -76,9 +78,9 @@ const Services = () => {
                                     {services[activeIndex].Description}
                                 </p>
                                 <div className='flex justify-start'>
-                                <button className=' cursor-pointer mt-6 md:px-18 md:py-4 px-8 py-2 rounded-full text-white text-sm font-semibold font-inter   bg-linear-to-r from-[#3943FF] to-[#2EC8FF] shadow-md hover:opacity-90 transition-all'>
+                                <Link href={`/services/${services[activeIndex].slug}`} className=' cursor-pointer mt-6 md:px-18 md:py-4 px-8 py-2 rounded-full text-white text-sm font-semibold font-inter   bg-linear-to-r from-[#3943FF] to-[#2EC8FF] shadow-md hover:opacity-90 transition-all'>
                                     Learn more
-                                </button>
+                                </Link>
                             </div>
                             </div>
                             
