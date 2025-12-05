@@ -7,6 +7,7 @@ import clouldicon from "@/assets/clouldicon.png";
 import graph from "@/assets/graph.png";
 import { motion, useAnimation, useInView } from "framer-motion";
 
+
 const Strategy = () => {
   const sectionRef = useRef(null);
 
@@ -71,8 +72,10 @@ const Strategy = () => {
         building data-driven, AI-first organizations.
       </motion.p>
 
-      {/* 🔥 Card Section */}
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-6 pt-8 md:pt-10 max-w-6xl mx-auto">
+      <ul
+        ref={cardsRef}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-6 pt-8 md:pt-10 max-w-6xl mx-auto"
+      >
         {cards.map((card, index) => (
           <motion.li
             key={index}
