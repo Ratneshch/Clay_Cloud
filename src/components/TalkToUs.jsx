@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const TalkToUs = () => {
   return (
-    <section className="w-full md:px-20 px-10">
+    <section className="w-full mb-20  md:px-20 px-10">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

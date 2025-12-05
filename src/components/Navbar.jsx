@@ -198,7 +198,7 @@ const Navbar = () => {
                         setOpenMenu(null);
                         setOpenServiceChild(false);
                       }}
-                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl sm:ml-26 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg overflow-auto rounded-2xl"
+                      className="fixed  top-[64px] w-full md:w-screen lg:w-6xl left-1/2 -translate-x-1/2 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg overflow-auto rounded-2xl"
                       style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-10">
@@ -235,7 +235,7 @@ const Navbar = () => {
                         setOpenMenu(null);
                         if (!isMobile) setOpenServiceChild(false);
                       }}
-                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto mt-4.5 rounded-2xl sm:ml-25"
+                      className="fixed left-1/2 -translate-x-1/2 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto mt-4.5 rounded-2xl "
                       style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 sm:px-10">
@@ -308,8 +308,7 @@ const Navbar = () => {
           {/* Contact Button */}
           <div className="hidden md:inline-flex ml-auto">
             <Link href='/contact'
-              className="rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
-              
+              className="rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"  
             >
               Contact
             </Link>
@@ -400,7 +399,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-
+            <Link href='/contact'> 
             <button
               className="mt-3 w-full rounded-md px-4 py-2 text-sm font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
               onClick={() => {
@@ -410,6 +409,7 @@ const Navbar = () => {
             >
               Contact
             </button>
+            </Link>
           </div>
         </div>
       )}

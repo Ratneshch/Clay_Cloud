@@ -57,7 +57,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="bg-white min-h-screen px-6 md:px-20 py-20">
+    <div className="bg-white min-h-screen mt-30">
 
       {/* Header */}
       <motion.div
@@ -105,7 +105,7 @@ export default function ContactPage() {
       <div className="grid md:grid-cols-2 gap-10 mt-16 mx-40">
 
         {/* Contact Form */}
-        <div>
+        <div className="shadow-lg p-5 rounded-2xl">
           <h2 className="text-2xl font-bold text-gray-900 h-heading">Contact</h2>
 
           <div className="mt-6 space-y-4">
@@ -162,14 +162,12 @@ export default function ContactPage() {
 
           </div>
         </div>
-
-        {/* Office Info + FAQ */}
-        <div>
+        <div className="mt-10">
           <h2 className="text-2xl font-bold text-gray-900 h-heading">
             Our Global Office
           </h2>
 
-          <div className="mt-6 w-full h-64 rounded-xl overflow-hidden border bg-gradient-to-br from-blue-50 to-blue-100">
+          <div className="mt-6 w-full h-102 rounded-xl overflow-hidden border bg-gradient-to-br from-blue-50 to-blue-100">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235.75505127265671!2d73.03966407722295!3d19.01615999678223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3accc032d2b%3A0x51d4c7efd8f889e8!2sCasablanca!5e0!3m2!1sen!2sin!4v1764920980460!5m2!1sen!2sin"
               width="100%"
@@ -180,15 +178,22 @@ export default function ContactPage() {
               style={{ border: 0 }}
             />
           </div>
+        </div>
+
+      </div>
+      {/* Office Info + FAQ */}
+        <div className="px-40 pb-10 mt-20 bg-[#f7f7f7]">
 
           {/* FAQ */}
-          <h2 className="mt-10 text-2xl font-bold h-heading">FAQ</h2>
+          <div className="p-2 text-center ">
+            <h2 className="mt-10 text-3xl font-bold h-heading">FAQ</h2>
+          </div>
 
           <div className="mt-4 space-y-3">
             {faqs.map((item, i) => (
               <div
                 key={i}
-                className="border rounded-xl p-4 bg-white shadow-sm hover:shadow transition cursor-pointer"
+                className="border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow transition cursor-pointer"
                 onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
               >
                 <div className="flex justify-between items-center">
@@ -213,8 +218,6 @@ export default function ContactPage() {
             ))}
           </div>
         </div>
-
-      </div>
     </div>
   );
 }
