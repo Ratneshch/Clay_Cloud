@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { resourcesData } from "@/data/products";
+import Link from "next/link";
 
 const filterTypes = ["All", "Media", "Case Study", "Blog", "Events & Webinars"];
 
@@ -125,9 +126,11 @@ export default function InsightsResources() {
         viewport={{ once: false }}
         transition={{ duration: 0.5 }}
       >
+        <Link href='/blog'>
         <button className="bg-gradient-to-r from-blue-400 to-blue-600 text-white font-inter px-6 py-3 rounded-full font-medium hover:opacity-90 transition">
           View All
         </button>
+        </Link>
       </motion.div>
 
     </section>
