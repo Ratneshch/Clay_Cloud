@@ -10,9 +10,11 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 const Strategy = () => {
   const sectionRef = useRef(null);
+   const cardsRef = useRef(null); 
 
   const cardsControls = useAnimation();
   const isInView = useInView(sectionRef, { margin: "-10% 0px -10% 0px" });
+  
 
   // Trigger card animation
   useEffect(() => {
