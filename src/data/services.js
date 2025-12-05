@@ -15,7 +15,7 @@ export const services =[
     "Heading": "Turn your data into a strategic advantage.",
     "Description": "We design and implement end-to-end data platforms, AI/ML models, and analytics solutions that help you make faster, smarter decisions.",
     "images": [ai],
-    "tag1": "What we offer:",
+    "tag1": "What we offer",
     "values": [
       "Data Strategy & Architecture",
       "Data Lake & Data Warehouse Modernization (AWS Redshift, Azure Synapse, Databricks)",
@@ -23,13 +23,13 @@ export const services =[
       "Advanced Analytics & Business Intelligence",
       "AI Readiness Assessment & AI Governance Frameworks"
     ],
-    "tag2": "Value Delivered:",
+    "tag2": "Value Delivered",
     "values2": [
       "Improved decision intelligence",
       "Faster insights-to-action cycle",
       "Scalable AI adoption roadmap"
     ],
-    "text": "Unlock a future-proof data foundation with tailored AI-driven solutions:",
+    "text": "Unlock a future-proof data foundation with tailored AI-driven solutions",
     "details": [
       {
         "title": "Enterprise Data Visioning",
@@ -59,7 +59,7 @@ export const services =[
     "Heading": "Harness the power of GenAI to reinvent experiences, operations, and productivity.",
     "Description": "From automating knowledge workflows to building conversational copilots, we help enterprises integrate GenAI responsibly and effectively.",
     "images": [gen],
-    "tag1": "Our GenAI offerings:",
+    "tag1": "Our GenAI offerings",
     "values": [
       "Custom Copilots for Enterprises (built on OpenAI, AWS Bedrock, or Azure OpenAI)",
       "Intelligent Document Processing",
@@ -67,11 +67,11 @@ export const services =[
       "Knowledge Search and Summarization Bots",
       "Responsible AI & Model Fine-tuning Services"
     ],
-    "tag2": "Our Differentiator:",
+    "tag2": "Our Differentiator",
     "values2": [
       "Our proprietary AI-based HR Tech Suite empowers organizations to enhance Payroll system, learning, and workforce productivity using adaptive intelligence."
     ],
-    "text": "Shape industry-defining user, partner, and employee experiences:",
+    "text": "Shape industry-defining user, partner, and employee experiences",
     "details": [
       {
         "title": "Smart Copilots",
@@ -101,7 +101,7 @@ export const services =[
     "Heading": "Accelerate your product delivery with modern DevOps practices.",
     "Description": "We help you design, build, and operate cloud-native environments that ensure reliability, security, and scalability.",
     "images": [devops],
-    "tag1": "Capabilities:",
+    "tag1": "Capabilities",
     "values": [
       "CI/CD Pipeline Automation",
       "Infrastructure as Code (IaC)",
@@ -109,13 +109,13 @@ export const services =[
       "Cloud Cost Optimization & FinOps",
       "Observability & Reliability Engineering"
     ],
-    "tag2": "Benefits:",
+    "tag2": "Benefits",
     "values2": [
       "Faster time-to-market",
       "Improved deployment reliability",
       "Optimized cloud spend"
     ],
-    "text": "Power rapid, secure, and continuous software delivery:",
+    "text": "Power rapid, secure, and continuous software delivery",
     "details": [
       {
         "title": "Modern Pipeline Automation",
@@ -145,20 +145,20 @@ export const services =[
     "Heading": "Transform legacy applications into cloud-ready, scalable, and future-proof systems.",
     "Description": "Our frameworks help organizations migrate, refactor, or rebuild applications with minimal disruption.",
     "images": [app],
-    "tag1": "Offerings:",
+    "tag1": "Offerings",
     "values": [
       "Cloud Migration & Re-platforming",
       "API-first and Microservices Architecture",
       "Serverless & Event-driven Systems",
       "Legacy App Refactoring & Modern UI integration"
     ],
-    "tag2": "Outcome:",
+    "tag2": "Outcome",
     "values2": [
       "Future-ready digital platforms",
       "Improved scalability and agility",
       "Enhanced performance and security"
     ],
-    "text": "Future-ready platforms for digital advantage:",
+    "text": "Future-ready platforms for digital advantage",
     "details": [
       {
         "title": "Non-Disruptive Migration",
@@ -184,18 +184,18 @@ export const services =[
     "Heading": "Deliver intuitive, human-centered experiences that engage and delight users.",
     "Description": "Our UI/UX practice combines design thinking with modern front-end engineering.",
     "images": [ui],
-    "tag1": "We specialize in:",
+    "tag1": "We specialize in",
     "values": [
       "UX Research & Strategy",
       "UI Design Systems & Prototyping",
       "Frontend Engineering (React, Angular, Flutter)",
       "Accessibility & Performance Optimization"
     ],
-    "tag2": "Result:",
+    "tag2": "Result",
     "values2": [
       "Consistent, responsive, and delightful digital experiences."
     ],
-    "text": "Differentiate with engaging, inclusive digital experiences:",
+    "text": "Differentiate with engaging, inclusive digital experiences",
     "details": [
       {
         "title": "Research-Driven Design",
@@ -221,7 +221,7 @@ export const services =[
     "Heading": "Build digital trust with proactive and adaptive security solutions.",
     "Description": "We secure your applications, data, and cloud environments against evolving threats.",
     "images": [cyber],
-    "tag1": "Services:",
+    "tag1": "Services",
     "values": [
       "Security Posture Assessment",
       "Cloud Security & Compliance (AWS, Azure)",
@@ -229,7 +229,7 @@ export const services =[
       "Threat Detection & Incident Response",
       "Data Privacy & Governance Frameworks"
     ],
-    "tag2": "Outcomes:",
+    "tag2": "Outcomes",
     "values2": [
       "Strengthened security posture",
       "Compliance with global standards",
@@ -265,20 +265,20 @@ export const services =[
     "Heading": "Focus on growth while we manage your digital infrastructure.",
     "Description": "Our 24x7 managed services ensure your systems are secure, optimized, and always-on.",
     "images": [manage],
-    "tag1": "Managed Offerings:",
+    "tag1": "Managed Offerings",
     "values": [
       "Cloud Operations & Monitoring",
       "Application & Database Management",
       "Backup, Disaster Recovery, and Business Continuity",
       "IT Service Management (ITSM) & Automation"
     ],
-    "tag2": "Why ClayCloud Technologies:",
+    "tag2": "Why ClayCloud Technologies",
     "values2": [
       "Proactive support model",
       "Flexible engagement models",
       "Predictable performance with measurable SLAs"
     ],
-    "text": "Peace of mind for innovation-ready businesses:",
+    "text": "Peace of mind for innovation-ready businesses",
     "details": [
       {
         "title": "24x7 Ops Command Center",
@@ -304,7 +304,7 @@ export const services =[
     "Heading": "Define your cloud and digital transformation roadmap with expert guidance.",
     "Description": "We bring a balanced mix of strategy, technology, and execution excellence.",
     "images": [Consulting],
-    "tag1": "Advisory Services:",
+    "tag1": "Advisory Services",
     "values": [
       "Cloud Readiness Assessment",
       "Digital Maturity Assessment",
@@ -312,11 +312,11 @@ export const services =[
       "Cloud Cost Optimization",
       "Governance & FinOps Consulting"
     ],
-    "tag2": "Outcome:",
+    "tag2": "Outcome",
     "values2": [
       "A clear, executable transformation roadmap aligned with your business goals."
     ],
-    "text": "A balanced, actionable approach to adopting technology at scale:",
+    "text": "A balanced, actionable approach to adopting technology at scale",
     "details": [
       {
         "title": "Cloud & Digital Maturity Assessments",
