@@ -12,8 +12,8 @@ const UseCaseCard = ({ icon, title, description, shadowColor }) => {
       }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}                 
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: false }}                 
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="bg-purple-100 p-4 rounded-lg mb-4">
         <img src={icon.src} alt={title} className="h-8 w-8" />

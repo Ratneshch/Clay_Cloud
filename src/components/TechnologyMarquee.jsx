@@ -16,9 +16,9 @@ const TechnologyMarquee = () => {
       <motion.div
         className="text-center mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.5 }}
       >
       <div className="flex items-center justify-center flex-col">
       <h2 className="text-2xl sm:text-3xl md:text-[48px] font-bold text-[#1e1b4b]">
