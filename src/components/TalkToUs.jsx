@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link"
 import { motion } from "framer-motion";
 
 const TalkToUs = () => {
@@ -38,6 +39,7 @@ const TalkToUs = () => {
         </motion.p>
 
         {/* Button */}
+        <Link href='/talktous'>
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -48,7 +50,9 @@ const TalkToUs = () => {
         >
           TALK TO US
         </motion.button>
+         </Link>
       </motion.div>
+    
     </section>
   );
 };

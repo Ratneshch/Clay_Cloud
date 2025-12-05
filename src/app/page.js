@@ -10,6 +10,7 @@ import Services from '@/components/Services'
 import Strategy from '@/components/Strategy'
 import React from 'react'
 
+
 const page = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const page = () => {
       <AboutCloud />
       <InsightsResources/>
       <TalkToUs/>
+    
     </div>
   )
 }

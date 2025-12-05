@@ -307,12 +307,12 @@ const Navbar = () => {
 
           {/* Contact Button */}
           <div className="hidden md:inline-flex ml-auto">
-            <button
+            <Link href='/contact'
               className="rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
-              onClick={() => handleClick("Contact")}
+              
             >
               Contact
-            </button>
+            </Link>
           </div>
 
           {/* Mobile toggle */}
