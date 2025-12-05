@@ -14,7 +14,7 @@ const Strategy = () => {
 
   const cardsControls = useAnimation();
   const isInView = useInView(sectionRef, { margin: "-10% 0px -10% 0px" });
-  
+
 
   // Trigger card animation
   useEffect(() => {
@@ -59,6 +59,7 @@ const Strategy = () => {
         text-[28px] sm:text-[36px] md:text-[48px] leading-[1.1] break-words text-white pt-8 md:pt-0 "
       >
         Strategy & Advisory
+
       </motion.h3>
 
       <motion.p
@@ -114,6 +115,7 @@ const Strategy = () => {
                 height={56}
                 className="mx-auto"
               />
+
 
               <h5 className="font-syne text-[20px] sm:text-[22px] md:text-[24px] font-bold text-white mb-3 pt-3">
                 {card.Name}
