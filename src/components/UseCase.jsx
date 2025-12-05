@@ -56,8 +56,8 @@ const UseCase = () => {
       className="sm:px-20 sm:py-12 px-10 py-6 flex flex-col items-center justify-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}                   
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: false }}                   
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {/* Heading */}
       <div className="flex items-center justify-center flex-col">

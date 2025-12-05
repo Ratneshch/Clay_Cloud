@@ -30,8 +30,8 @@ export default function InsightsResources() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
         className="text-center mb-10"
       >
         <h2 className="text-3xl sm:text-[48px] font-bold">
@@ -46,8 +46,8 @@ export default function InsightsResources() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5}}
         className="overflow-x-auto hide-scrollbar mb-10"
       >
         <div className="flex gap-3 min-w-max justify-center">
@@ -77,8 +77,8 @@ export default function InsightsResources() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px]"
               >
                 <img
@@ -122,8 +122,8 @@ export default function InsightsResources() {
         className="flex justify-center mt-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
       >
         <button className="bg-gradient-to-r from-blue-400 to-blue-600 text-white font-inter px-6 py-3 rounded-full font-medium hover:opacity-90 transition">
           View All

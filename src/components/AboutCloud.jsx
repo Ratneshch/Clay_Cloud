@@ -79,8 +79,8 @@ const AboutCloud = () => {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
         className='flex items-center justify-center flex-col'
       >
         <h1 className='text-black text-[28px] sm:text-[34px] md:text-[48px] font-syne font-bold text-center sm:text-left'>
@@ -115,7 +115,7 @@ const AboutCloud = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5 }}
           className="text-3xl text-black text-center font-bold mb-10"
         >
           Our Core Values
@@ -127,8 +127,8 @@ const AboutCloud = () => {
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: index * 0.15 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               className="flex flex-col items-center justify-center gap-4"
             >
               <div className={`w-14 h-14 rounded-full flex items-center justify-center ${item.iconBg}`}>

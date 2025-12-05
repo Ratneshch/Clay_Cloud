@@ -7,8 +7,8 @@ const AboutCard = ({ title, description, icon, bgcolor, textcolor, shadowColor }
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="w-full sm:w-[190px] md:w-[230px] lg:w-[270px] h-[180px] rounded-2xl px-6 py-5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:scale-[1.03]"
       style={{ backgroundColor: bgcolor, boxShadow: `4px 4px 2px 3px ${shadowColor}` }}
     >

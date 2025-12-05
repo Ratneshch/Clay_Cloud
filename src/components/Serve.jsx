@@ -88,8 +88,8 @@ const Serve = () => {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
         className="flex items-center justify-center flex-col"
       >
         <h1 className="text-black text-[28px] sm:text-[34px] md:text-[48px] font-syne font-bold text-center sm:text-left">
@@ -110,8 +110,8 @@ const Serve = () => {
             key={item.id}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.15 }}
-            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: i * 0.15 }}
+            viewport={{ once: false, amount: 0.2 }}
           >
             <ServeCard {...item} />
           </motion.div>
