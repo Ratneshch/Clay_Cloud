@@ -198,7 +198,7 @@ const Navbar = () => {
                         setOpenMenu(null);
                         setOpenServiceChild(false);
                       }}
-                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl ml-25 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg overflow-auto rounded-2xl"
+                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl sm:ml-18 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg overflow-auto rounded-2xl"
                       style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-10">
@@ -235,7 +235,7 @@ const Navbar = () => {
                         setOpenMenu(null);
                         if (!isMobile) setOpenServiceChild(false);
                       }}
-                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto mt-4.5 rounded-2xl ml-25"
+                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto mt-4.5 rounded-2xl sm:ml-18"
                       style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 sm:px-10">
