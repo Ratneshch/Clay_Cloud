@@ -1,0 +1,92 @@
+{
+  "navItems" :[
+    {
+      "label": "Industries",
+      "key": "industries",
+      "columns": [
+        {
+          "title": "Industries we focus on",
+          "items": [
+            "Healthcare & Lifesciences",
+            "Industrial",
+            "Retail and CPG",
+            "Travel & Hospitality",
+            "Automotive",
+            "HR Tech"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Company",
+      "key": "company",
+      "columns": [
+        {
+          "title": "Company",
+          "items": [
+            "About us",
+            "Partners",
+            "Leadership",
+            "Career"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Solutions",
+      "key": "solutions",
+      "columns": [
+        {
+          "title": "Solutions",
+          "items": [
+            "ClayCloudHR",
+            "AI powered Employee Query BOT"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Services",
+      "key": "outsourcing",
+      "columns": [
+        {
+          "title": "Services",
+          "items": [
+            {
+              "label": "Consulting Services",
+              "children": [
+                { "name": "Data & AI Services", "slug": "data-and-ai-services" },
+                { "name": "Generative AI (GenAI) Solutions", "slug": "generative-ai-genai-solutions" },
+                { "name": "DevOps & Cloud Engineering", "slug": "devops-cloud-engineering" },
+                { "name": "Application Modernization", "slug": "application-modernization" },
+                { "name": "UI/UX Design & Engineering", "slug": "ui-ux-design-engineering" },
+                { "name": "Cybersecurity Services", "slug": "cybersecurity-services" },
+                { "name": "Managed Services", "slug": "managed-services" },
+                { "name": "Cloud Consulting & Advisory", "slug": "cloud-consulting-advisory" }
+              ]
+            },
+            "Pay per service model",
+            "Contract based models",
+            "End to end recruitment support",
+            "Scalable BOT model"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Insights",
+      "key": "insights",
+      "columns": [
+        {
+          "title": "Insights",
+          "items": [
+            "Media",
+            "Case studies – Public & Private",
+            "Blog",
+            "Event & Webinars"
+          ]
+        }
+      ]
+    }
+  ]
+}

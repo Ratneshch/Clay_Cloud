@@ -2,18 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const partners = [
-  "/images/partnerlogos-lenovo.png",
-  "/images/partnerlogos-microsoft.png",
-  "/images/partnerlogos-acronis.png",
-  "/images/partnerlogos-cisco.png",
-  "/images/partnerlogos-ibm.png",
-  "/images/partnerlogos-juniper.png",
-  "/images/partnerlogos-synology.png"
-];
+import partnersData from "@/data/partners.json"; // << dynamic JSON import
 
 const TechnologyMarquee = () => {
+  const partners = partnersData.partners; // << fetch JSON array
+
   return (
     <section className="pb-10 pt-6 md:pb-12 md:pt-8 text-center bg-white overflow-hidden relative">
       
