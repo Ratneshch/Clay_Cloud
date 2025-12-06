@@ -18,16 +18,19 @@ export default function DetailPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
+     
       {/* Hero Image */}
-      <div className="mb-12 mt-20">
-        <Image
-          src={item.thumbnail}
-          width={200}
-          height={100}
-          alt={item.title}
-          className="rounded-2xl shadow-xl w-full object-cover"
-        />
-      </div>
+      
+      <div className="mb-12 mt-20 flex justify-center">
+  <Image
+    src={item.thumbnail}
+    width={800}
+    height={600}
+    alt={item.title}
+    className="rounded-2xl shadow-xl object-cover"
+  />
+</div>
+
 
       {/* Content */}
       <div className="max-w-4xl mx-auto">
