@@ -15,14 +15,14 @@ const Serve = () => {
   const useCases = [
     {
       id: 1,
-      title: "Healthcare",
-      description: "Digital health solutions, patient management, and telemedicine platforms",
-      icon: heart,
-      bgcolor: "#FBEBF1",
-      textcolor: "#FF5151",
-      bordercolor: "#FF5151",
-      iconolor: "#f8cad7",
-      shadowColor: "#f8cad7",
+  title: "Healthcare",
+  description: "Digital health solutions, patient management, and telemedicine platforms",
+  icon: heart,
+  bgcolor: "#FEF4E7",       // cream tone background
+  textcolor: "#D97A00",     // warm amber text
+  bordercolor: "#D97A00",   // matching border
+  iconolor: "#FADFC2",      // soft pastel cream
+  shadowColor: "#FADFC2",   // matching shadow
     },
     {
       id: 2,
