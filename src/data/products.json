@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "icon": "users",
+    "title": "ClayCloudHR",
+    "subtitle": "AI-Powered Payroll & HR Management",
+    "description":
+      "Automate payroll processing, compliance management, and employee lifecycle with intelligent AI-driven workflows.",
+    "image": "/images/HR Dashboard.png",
+    "tags": ["Payroll Automation", "Compliance", "Analytics"]
+  },
+  {
+    "id": 2,
+    "icon": "robot",
+    "title": "Employee AI Query Bot",
+    "subtitle": "Intelligent Virtual Assistant",
+    "description":
+      "24/7 AI-powered assistant answering employee queries, automating HR tasks, and providing instant support.",
+    "image": "/images/AI Bot Interface.png",
+    "tags": ["NLP", "24/7 Support", "Multi-language"]
+  }
+]
+

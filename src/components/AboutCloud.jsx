@@ -1,76 +1,12 @@
 "use client";
 
 import React from 'react'
-import tower from "../assets/tower.png"
-import log from "../assets/log.png"
-import handshake from "../assets/handshake.png"
-import whitebag from "../assets/whitebag.png"
-import bluebulb from "../assets/bluebulb.png"
-import diffheart from "../assets/diffheart.png"
-import sheild from "../assets/sheild.png"
+import data from "@/data/about.json";
 import AboutCard from './AboutCard'
 import { motion } from "framer-motion";
 
 const AboutCloud = () => {
-  const cardData = [
-    {
-      id: 1,
-      title: "About Us",
-      description: "Our mission, vision, and values",
-      icon: tower,
-      bgcolor: "#010A83",
-      shadowColor: "#FFFFFF",
-      textcolor: "#FFFFFF",
-    },
-    {
-      id: 2,
-      title: "Leadership",
-      description: "Meet our executive team",
-      icon: log,
-      bgcolor: "#010A83",
-      shadowColor: "#FFFFFF",
-      textcolor: "#FFFFFF",
-    },
-    {
-      id: 3,
-      title: "Partners",
-      description: "Strategic partnerships",
-      icon: handshake,
-      bgcolor: "#010A83",
-      shadowColor: "#FFFFFF",
-      textcolor: "#FFFFFF",
-    },
-    {
-      id: 4,
-      title: "Careers",
-      description: "Join our team",
-      icon: whitebag,
-      bgcolor: "#010A83",
-      shadowColor: "#FFFFFF",
-      textcolor: "#FFFFFF",
-    },
-  ];
-
-  const valuesData = [
-    {
-      icon: bluebulb,
-      title: "Innovation First",
-      description: "Pushing boundaries with cutting-edge technology",
-      iconBg: "bg-blue-100 text-blue-600",
-    },
-    {
-      icon: diffheart,
-      title: "Customer Success",
-      description: "Your success is our success",
-      iconBg: "bg-cyan-100 text-cyan-600",
-    },
-    {
-      icon: sheild,
-      title: "Trust & Integrity",
-      description: "Building lasting relationships",
-      iconBg: "bg-indigo-100 text-indigo-600",
-    },
-  ];
+ const { cardData, valuesData } = data;
 
   return (
     <div className='sm:px-20 sm:py-12 mt-20 px-10 py-6 flex flex-col items-center justify-center'>
@@ -132,7 +68,7 @@ const AboutCloud = () => {
               className="flex flex-col items-center justify-center gap-4"
             >
               <div className={`w-14 h-14 rounded-full flex items-center justify-center ${item.iconBg}`}>
-                <img src={item.icon.src} alt={item.title} className="mb-3 pt-3" />
+                <img src={item.icon} alt={item.title} className="mb-3 pt-3" />
               </div>
 
               <h3 className="text-lg font-semibold text-black">{item.title}</h3>
