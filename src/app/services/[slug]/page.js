@@ -136,7 +136,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="pt-10">
+      <section className="pt-10 pb-10">
   <div className="flex items-center flex-col justify-center">
     <h1 className="font-inter text-[30px] mb-4 w-[320px] md:w-full  text-center font-bold text-black">
       {service.text}
