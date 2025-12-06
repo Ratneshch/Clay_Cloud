@@ -73,6 +73,7 @@ const Footer = () => {
   );
 };
 
+
 const FooterColumn = ({ title, items }) => {
   return (
     <div>
