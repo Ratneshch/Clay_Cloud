@@ -98,13 +98,17 @@ const Navbar = () => {
                     <ChevronDown size={14} />
                   </button>
 
-                  {/* STANDARD MEGAMENU (Non-Services) */}
+                  {/* STANDARD MEGAMENU */}
                   {isActive && item.key !== "outsourcing" && (
                     <div
                       ref={dropdownRef}
                       onMouseEnter={() => setOpenMenu(item.key)}
-                      onMouseLeave={() => setOpenMenu(null)}
-                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl sm:ml-26 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg rounded-2xl"
+                      onMouseLeave={() => {
+                        setOpenMenu(null);
+                        setOpenServiceChild(false);
+                      }}
+                      className="fixed  top-[64px] w-full md:w-screen lg:w-6xl left-1/2 -translate-x-1/2 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg overflow-auto rounded-2xl"
+                      style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 sm:px-10">
                         {item.columns.map((col) => (
@@ -136,11 +140,15 @@ const Navbar = () => {
                     <div
                       ref={dropdownRef}
                       onMouseEnter={() => setOpenMenu(item.key)}
-                      onMouseLeave={() => setOpenMenu(null)}
-                      className="fixed left-0 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-2xl sm:ml-25"
+                      onMouseLeave={() => {
+                        setOpenMenu(null);
+                        if (!isMobile) setOpenServiceChild(false);
+                      }}
+                      className="fixed left-1/2 -translate-x-1/2 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto mt-4.5 rounded-2xl "
+                      style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 sm:px-10">
-
+                        
                         {/* LEFT COLUMN */}
                         <div>
                           <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">
@@ -171,7 +179,7 @@ const Navbar = () => {
                           </ul>
                         </div>
 
-                        {/* RIGHT COLUMN — CONSULTING SERVICES */}
+                        {/* RIGHT COLUMN */}
                         <div>
                           <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">
                             Consulting Services
@@ -200,11 +208,12 @@ const Navbar = () => {
 
           {/* Contact Button */}
           <div className="hidden md:inline-flex ml-auto">
-            <button
-              className="rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition"
+            <Link
+              href="/contact"
+              className="rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
             >
               Contact
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -214,6 +223,7 @@ const Navbar = () => {
           >
             {isOpen ? <HiX className="h-5 w-5" /> : <HiOutlineMenu className="h-5 w-5" />}
           </button>
+
         </div>
       </div>
 
@@ -221,7 +231,6 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden w-full bg-white border-b border-slate-100">
           <div className="px-4 py-3 max-h-[75vh] overflow-y-auto">
-
             <ul className="flex flex-col gap-2 text-sm text-slate-800">
               {navItems.map((item) => (
                 <li key={item.key}>
@@ -269,21 +278,28 @@ const Navbar = () => {
                                   </li>
                                 ))}
                               </ul>
+
                             </div>
                           );
                         })}
                       </ul>
                     </div>
                   )}
-
                 </li>
               ))}
             </ul>
 
-            <button className="mt-3 w-full rounded-md px-4 py-2 text-sm font-semibold bg-[#28326c] text-white">
-              Contact
-            </button>
-
+            <Link href="/contact">
+              <button
+                className="mt-3 w-full rounded-md px-4 py-2 text-sm font-semibold bg-[#28326c] text-white shadow-sm hover:opacity-90 transition cursor-pointer"
+                onClick={() => {
+                  handleClick("Contact");
+                  setIsOpen(false);
+                }}
+              >
+                Contact
+              </button>
+            </Link>
           </div>
         </div>
       )}

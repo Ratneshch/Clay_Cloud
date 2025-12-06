@@ -42,7 +42,7 @@ const Services = () => {
 
       <div className="md:pt-14 pt-8">
         {/* TABS */}
-        <ul className="flex py-4 overflow-x-auto hidescrollbar whitespace-nowrap">
+        <ul className="flex py-4 overflow-x-auto hidescrollbar whitespace-nowrap gap-5">
           {services.map((item, index) => (
             <li
               key={index}

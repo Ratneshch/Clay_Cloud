@@ -80,7 +80,7 @@ const Page = () => {
       <section className="md:mt-10">
         <div className="flex flex-col md:flex-row">
           {/* LEFT CONTENT */}
-          <div className="md:p-16 px-4">
+          <div className="md:p-16 px-4 text-center md:text-start">
             <h1 className="text-3xl md:text-3xl lg:text-[68px] font-bold text-slate-900">
               <span className="block text-transparent bg-clip-text bg-linear-to-r from-[#2563EB] via-[#2563EB] to-[#22C55E]">
                 {service.tag1}
@@ -90,10 +90,11 @@ const Page = () => {
             <ul>
               {service.values.map((value, i) => (
                 <li key={i}>
-                  <p className="font-inter text-[12px] w-[550px] md:w-full md:text-[16px] text-[#374151] mt-4 text-start">
-                    <GoDotFill className="inline mr-2 size-5 text-[#5179fc] ml-2 md:ml-6" />
-                    {value}
-                  </p>
+                  <p className="font-inter text-[14px] md:text-[16px] text-[#374151] mt-4 text-start flex items-start gap-2 px-4 md:px-6 max-w-full">
+                  <GoDotFill className="mt-1 text-[#5179fc] flex-shrink-0" />
+                  {value}
+                 </p>
+
                 </li>
               ))}
             </ul>
@@ -106,11 +107,11 @@ const Page = () => {
               transition={{ duration: 5, repeat: Infinity }}
               className="w-[70%] sm:w-[50%] md:w-[40%] h-[200px] sm:h-[250px] md:h-[350px] md:absolute md:right-10"
             >
-              <img
-  src={images[0]} // no .src needed
-  alt={service.Name}
-  className="w-full h-full object-cover rounded-3xl shadow-2xl"
-/>
+             <img
+                src={images[0]} 
+                alt={service.Name}
+                className="w-full h-full object-cover rounded-3xl shadow-2xl"
+              />
             </motion.div>
           </div>
         </div>
@@ -167,7 +168,7 @@ const Page = () => {
   "
 >
   <div className="w-full h-full rounded-2xl bg-white hover:bg-gray-200 transition flex flex-col justify-start gap-4 px-6 py:3 md:py-6">
-    <h1 className="text-[18px] sm:text-[20px] font-syne font-bold">
+    <h1 className="text-[18px] sm:text-[20px] font-syne font-bold pt-6">
       {item.title}
     </h1>
 
