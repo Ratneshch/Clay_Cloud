@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "type": "case-study",
+    "type": "case study",
     "slug": "cloud-migration-success-story",
     "title": "Cloud Migration Success Story",
     "thumbnail": "/images/Cloud Migration.png",
@@ -33,7 +33,7 @@
   },
   {
     "id": 4,
-    "type": "case-study",
+    "type": "case study",
     "slug": "digital-transformation-retail",
     "title": "Digital Transformation in Retail",
     "thumbnail": "/images/Digital Retail.jpg",
@@ -65,7 +65,7 @@
   },
   {
     "id": 7,
-    "type": "case-study",
+    "type": "case study",
     "slug": "supply-chain-optimization",
     "title": "Supply Chain Optimization with AI",
     "thumbnail": "/images/Supply Chain AI.jpg",
