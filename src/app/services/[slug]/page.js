@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { useParams } from "next/navigation";
-import { services } from "@/data/services";
 import { LuBrainCircuit } from "react-icons/lu";
+import {services} from "@/data/services.json"
 import { FaServer } from "react-icons/fa6";
 import { IoHardwareChipOutline } from "react-icons/io5";
 import { FaCloud } from "react-icons/fa";
@@ -16,6 +16,12 @@ const Page = () => {
   const { slug } = params;
 
   const service = services.find((item) => item.slug === slug);
+
+  const images = Array.isArray(service.images)
+  ? service.images
+  : [service.images];
+
+
 
   return (
     <>
@@ -101,10 +107,10 @@ const Page = () => {
               className="w-[70%] sm:w-[50%] md:w-[40%] h-[200px] sm:h-[250px] md:h-[350px] md:absolute md:right-10"
             >
               <img
-                src={service.images[0].src}
-                alt={service.Name}
-                className="w-full h-full object-cover rounded-3xl shadow-2xl"
-              />
+  src={images[0]} // no .src needed
+  alt={service.Name}
+  className="w-full h-full object-cover rounded-3xl shadow-2xl"
+/>
             </motion.div>
           </div>
         </div>
