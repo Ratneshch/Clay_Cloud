@@ -43,6 +43,7 @@ export default function InsightsResources() {
                   : "bg-white text-gray-700 border border-gray-300 hover:bg-blue-100"
                 }`}
             >
+              
               {filter}
             </button>
           ))}
