@@ -125,6 +125,7 @@ export default function AboutPage(){
                 {/* Blur color glows */}
                 <div className="float-icon float-5 absolute right-4 bottom-8 md:right-38 md:bottom-58 -z-10">
                   <div className="h-28 w-28 md:h-40 md:w-40 rounded-full bg-green-300 opacity-70 blur-3xl" />
+                  
                 </div>
         
                 <div className="float-icon float-5 absolute left-6 top-14 md:left-64 md:top-32 -z-10">
