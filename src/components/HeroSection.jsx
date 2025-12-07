@@ -4,6 +4,7 @@ import { LuBrainCircuit } from "react-icons/lu";
 import { FaServer } from "react-icons/fa6";
 import { IoHardwareChipOutline } from "react-icons/io5";
 import { FaCloud } from "react-icons/fa";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -64,9 +65,11 @@ const HeroSection = () => {
         </p>
 
         {/* CTA button */}
+        <Link href='/enquiry'>
         <button className="hero-button mt-8 sm:mt-10 inline-flex items-center justify-center w-full sm:w-auto sm:min-w-[180px] md:w-[206px] md:h-[68px] px-6 py-3 md:px-12 md:py-5 rounded-xl md:rounded-2xl text-sm md:text-base font-medium bg-[#111827] text-white shadow-md hover:bg-black/90 transition">
           Get Started
         </button>
+        </Link>
 
       </div>
     </section>

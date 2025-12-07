@@ -39,7 +39,7 @@ const TalkToUs = () => {
         </motion.p>
 
         {/* Button */}
-        <Link href='/talktous'>
+        <Link href='/contact'>
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
