@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
-import Brain from "@/assets/Brain.png";
-import clouldicon from "@/assets/clouldicon.png";
-import graph from "@/assets/graph.png";
+import cards from "@/data/strategy.json";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 
@@ -23,26 +21,7 @@ const Strategy = () => {
     }
   }, [isInView]);
 
-  const cards = [
-    {
-      icon: Brain,
-      Name: "AI Readiness Assessment",
-      Content:
-        "Evaluate your organization's AI maturity, data infrastructure, and talent capabilities to build a comprehensive AI transformation roadmap.",
-    },
-    {
-      icon: clouldicon,
-      Name: "Cloud Readiness Assessment",
-      Content:
-        "Analyze your current infrastructure, applications, and processes to create a strategic cloud migration and optimization plan.",
-    },
-    {
-      icon: graph,
-      Name: "Digital Maturity Assessment",
-      Content:
-        "Measure your organization's digital transformation progress across people, processes, technology, and culture dimensions.",
-    },
-  ];
+  
 
   return (
     <section

@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "/images/brain.png",
+    "Name": "AI Readiness Assessment",
+    "Content": "Evaluate your organization's AI maturity, data infrastructure, and talent capabilities to build a comprehensive AI transformation roadmap."
+  },
+  {
+    "icon": "/images/clouldicon.png",
+    "Name": "Cloud Readiness Assessment",
+    "Content": "Analyze your current infrastructure, applications, and processes to create a strategic cloud migration and optimization plan."
+  },
+  {
+    "icon": "/images/graph.png",
+    "Name": "Digital Maturity Assessment",
+    "Content": "Measure your organization's digital transformation progress across people, processes, technology, and culture dimensions."
+  }
+]
