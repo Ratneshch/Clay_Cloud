@@ -1,0 +1,60 @@
+{
+  "cardData": [
+    {
+      "id": 1,
+      "title": "About Us",
+      "description": "Our mission, vision, and values",
+      "icon": "/images/tower.png",
+      "bgcolor": "#010A83",
+      "shadowColor": "#FFFFFF",
+      "textcolor": "#FFFFFF"
+    },
+    {
+      "id": 2,
+      "title": "Leadership",
+      "description": "Meet our executive team",
+      "icon": "/images/log.png",
+      "bgcolor": "#010A83",
+      "shadowColor": "#FFFFFF",
+      "textcolor": "#FFFFFF"
+    },
+    {
+      "id": 3,
+      "title": "Partners",
+      "description": "Strategic partnerships",
+      "icon": "/images/handshake.png",
+      "bgcolor": "#010A83",
+      "shadowColor": "#FFFFFF",
+      "textcolor": "#FFFFFF"
+    },
+    {
+      "id": 4,
+      "title": "Careers",
+      "description": "Join our team",
+      "icon": "/images/whitebag.png",
+      "bgcolor": "#010A83",
+      "shadowColor": "#FFFFFF",
+      "textcolor": "#FFFFFF"
+    }
+  ],
+  "valuesData": [
+    {
+      "icon": "/images/bluebulb.png",
+      "title": "Innovation First",
+      "description": "Pushing boundaries with cutting-edge technology",
+      "iconBg": "bg-blue-100 text-blue-600"
+    },
+    {
+      "icon": "/images/diffheart.png",
+      "title": "Customer Success",
+      "description": "Your success is our success",
+      "iconBg": "bg-cyan-100 text-cyan-600"
+    },
+    {
+      "icon": "/images/sheild.png",
+      "title": "Trust & Integrity",
+      "description": "Building lasting relationships",
+      "iconBg": "bg-indigo-100 text-indigo-600"
+    }
+  ]
+}

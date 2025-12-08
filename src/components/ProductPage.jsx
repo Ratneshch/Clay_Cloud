@@ -5,7 +5,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { products } from "@/data/products";
+import products from "@/data/products.json"
 
 import { RiRobot2Fill } from "react-icons/ri";
 import { FaUsers } from "react-icons/fa6";
@@ -30,7 +30,7 @@ export default function ProductPage() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}   // 🔥 Animate every time on scroll
+        viewport={{ once: false, amount: 0.3 }}   
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="w-full sm:w-80 md:w-96 lg:w-[624px] px-5 h-auto lg:h-[480px]"
       >

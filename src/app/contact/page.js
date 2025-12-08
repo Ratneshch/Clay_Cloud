@@ -80,7 +80,7 @@ export default function ContactPage() {
         </motion.div>
 
         {/* Contact Info Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12 px-4 sm:px-6 md:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-6 mt-8 sm:mt-12 px-4 sm:px-6 md:px-0">
           {contactCards.map((item, i) => (
             <motion.div
               key={i}
@@ -110,66 +110,77 @@ export default function ContactPage() {
           <div className="shadow-lg p-4 sm:p-5 rounded-2xl bg-white">
             <h2 className="text-lg sm:text-2xl font-bold text-gray-900 h-heading">Contact</h2>
 
-            <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
+            <div className="mt-4 sm:mt-6 space-y-4">
 
-              {/* Inputs with icons */}
-              <div className="relative">
-                <User className="absolute left-3 top-3 text-gray-400" size={18} />
-                <input
-                  placeholder="Full Name"
-                  className="w-full pl-10 p-2.5 sm:p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  aria-label="Full Name"
-                />
-              </div>
+  {/* Full Name */}
+  <div className="relative">
+    <User 
+      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+      size={20}
+    />
+    <input
+      placeholder="Full Name"
+      className="w-full pl-12 pr-4 py-3 border rounded-xl shadow-sm 
+      focus:outline-none focus:ring-2 focus:ring-blue-300"
+    />
+  </div>
 
-              <div className="relative">
-                <MailCheck className="absolute left-3 top-3 text-gray-400" size={18} />
-                <input
-                  placeholder="Email"
-                  className="w-full pl-10 p-2.5 sm:p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  aria-label="Email"
-                  inputMode="email"
-                />
-              </div>
+  {/* Email */}
+  <div className="relative">
+    <MailCheck 
+      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+      size={20}
+    />
+    <input
+      placeholder="Email"
+      className="w-full pl-12 pr-4 py-3 border rounded-xl shadow-sm 
+      focus:outline-none focus:ring-2 focus:ring-blue-300"
+      inputMode="email"
+    />
+  </div>
 
-              <div className="relative">
-                <Briefcase className="absolute left-3 top-3 text-gray-400" size={18} />
-                <input
-                  placeholder="Company / Organization"
-                  className="w-full pl-10 p-2.5 sm:p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  aria-label="Company"
-                />
-              </div>
+  {/* Company */}
+  <div className="relative">
+    <Briefcase
+      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+      size={20}
+    />
+    <input
+      placeholder="Company / Organization"
+      className="w-full pl-12 pr-4 py-3 border rounded-xl shadow-sm 
+      focus:outline-none focus:ring-2 focus:ring-blue-300"
+    />
+  </div>
 
-              <div className="relative">
-                <Type className="absolute left-3 top-3 text-gray-400" size={18} />
-                <input
-                  placeholder="Subject"
-                  className="w-full pl-10 p-2.5 sm:p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  aria-label="Subject"
-                />
-              </div>
+  {/* Subject */}
+  <div className="relative">
+    <Type
+      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+      size={20}
+    />
+    <input
+      placeholder="Subject"
+      className="w-full pl-12 pr-4 py-3 border rounded-xl shadow-sm 
+      focus:outline-none focus:ring-2 focus:ring-blue-300"
+    />
+  </div>
 
-              <div className="relative">
-                <Type className="absolute left-3 top-3 text-gray-400" size={18} />
-                <textarea
-                  placeholder="Message"
-                  rows={5}
-                  className="w-full pl-10 p-2.5 sm:p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  aria-label="Message"
-                />
-              </div>
+  {/* Message */}
+  <div className="relative">
+    <Type
+      className="absolute left-4 top-4 text-gray-400 pointer-events-none"
+      size={20}
+    />
+    <textarea
+      placeholder="Message"
+      rows={5}
+      className="w-full pl-12 pr-4 py-3 border rounded-xl shadow-sm 
+      focus:outline-none focus:ring-2 focus:ring-blue-300"
+    />
+  </div>
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-                className="w-full bg-blue-600 text-white py-2.5 sm:py-3 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-blue-700 transition"
-                aria-label="Send Message"
-              >
-                <Send size={18} /> <span className="text-sm sm:text-base">Send Message</span>
-              </motion.button>
+</div>
 
-            </div>
           </div>
 
           {/* Office / Map */}
