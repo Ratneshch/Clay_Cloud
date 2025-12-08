@@ -8,7 +8,6 @@ import TechnologyMarquee from '@/components/TechnologyMarquee'
 import UseCase from '@/components/UseCase'
 import Services from '@/components/Services'
 import Strategy from '@/components/Strategy'
-import React from 'react'
 
 
 const page = () => {

@@ -24,10 +24,22 @@
         {
           "title": "Company",
           "items": [
-            "About us",
-            "Partners",
-            "Leadership",
-            "Career"
+            {
+              "label": "About us",
+              "path": "/aboutus"
+            },
+            {
+              "label": "Partners",
+              "path": "/partners"
+            },
+            {
+              "label": "Leadership",
+              "path": "/leadership"
+            },
+            {
+              "label": "Career",
+              "path": "/career"
+            }
           ]
         }
       ]

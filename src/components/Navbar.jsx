@@ -118,16 +118,26 @@ const Navbar = () => {
                             </h3>
 
                             <ul className="space-y-2">
-                              {col.items.map((sub) => (
-                                <li key={typeof sub === "string" ? sub : sub.label}>
-                                  <button
-                                    className="w-full text-left text-sm sm:text-base text-slate-800 hover:text-[#1545e6]"
-                                    onClick={() => handleClick(sub)}
-                                  >
-                                    {typeof sub === "string" ? sub : sub.label}
-                                  </button>
-                                </li>
-                              ))}
+                              {col.items.map((sub) => {
+                                const isObj = typeof sub === "object";
+
+                                return (
+                                  <li key={isObj ? sub.label : sub}>
+                                    {isObj ? (
+                                      <Link
+                                        href={sub.path}
+                                        className="w-full block text-left text-sm sm:text-base text-slate-800 hover:text-[#1545e6]"
+                                      >
+                                        {sub.label}
+                                      </Link>
+                                    ) : (
+                                      <button className="w-full text-left text-sm sm:text-base text-slate-800 hover:text-[#1545e6]">
+                                        {sub}
+                                      </button>
+                                    )}
+                                  </li>
+                                );
+                              })}
                             </ul>
                           </div>
                         ))}
