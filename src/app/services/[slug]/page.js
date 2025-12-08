@@ -78,7 +78,7 @@ const Page = () => {
         </div>
       </section>
       <section className="md:mt-10">
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row justify-between">
           {/* LEFT CONTENT */}
           <div className="md:p-16 px-4 text-center md:text-start">
             <h1 className="text-3xl md:text-3xl lg:text-[68px] font-bold text-slate-900">

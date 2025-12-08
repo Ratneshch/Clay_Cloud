@@ -107,7 +107,7 @@ const Navbar = () => {
                         setOpenMenu(null);
                         setOpenServiceChild(false);
                       }}
-                      className="fixed  top-[64px] w-full md:w-screen lg:w-6xl left-1/2 -translate-x-1/2 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg overflow-auto rounded-2xl"
+                      className="fixed top-[64px] w-full md:w-screen lg:w-6xl left-1/2 -translate-x-1/2 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg overflow-auto rounded-2xl"
                       style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 sm:px-10">
@@ -119,13 +119,14 @@ const Navbar = () => {
 
                             <ul className="space-y-2">
                               {col.items.map((sub) => (
-                                <li key={typeof sub === "string" ? sub : sub.label}>
-                                  <button
+                                <li key={typeof sub === "string" ? sub : sub.label || sub.title}>
+                                  <Link
+                                    href={sub.slug}
                                     className="w-full text-left text-sm sm:text-base text-slate-800 hover:text-[#1545e6]"
                                     onClick={() => handleClick(sub)}
                                   >
-                                    {typeof sub === "string" ? sub : sub.label}
-                                  </button>
+                                    {typeof sub === "string" ? sub : sub.label || sub.title}
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -144,11 +145,10 @@ const Navbar = () => {
                         setOpenMenu(null);
                         if (!isMobile) setOpenServiceChild(false);
                       }}
-                      className="fixed left-1/2 -translate-x-1/2 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto mt-4.5 rounded-2xl "
+                      className="fixed left-1/2 -translate-x-1/2 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto mt-4.5 rounded-2xl"
                       style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 sm:px-10">
-                        
                         {/* LEFT COLUMN */}
                         <div>
                           <h3 className="text-base sm:text-lg font-semibold text-[#1545e6] mb-3">
@@ -197,7 +197,6 @@ const Navbar = () => {
                             ))}
                           </ul>
                         </div>
-
                       </div>
                     </div>
                   )}

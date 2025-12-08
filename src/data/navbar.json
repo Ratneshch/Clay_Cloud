@@ -80,10 +80,10 @@
         {
           "title": "Insights",
           "items": [
-            "Media",
-            "Case studies – Public & Private",
-            "Blog",
-            "Event & Webinars"
+            { "title": "Media", "slug": "/blog" },
+            { "title": "Case studies – Public & Private", "slug": "/blog" },
+            { "title": "Blog", "slug": "/blog" },
+            { "title": "Event & Webinars", "slug": "/blog" }
           ]
         }
       ]
