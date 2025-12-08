@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
-import Brain from "@/assets/Brain.png";
-import clouldicon from "@/assets/clouldicon.png";
-import graph from "@/assets/graph.png";
+import cards from "@/data/strategy.json";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 
@@ -23,26 +21,7 @@ const Strategy = () => {
     }
   }, [isInView]);
 
-  const cards = [
-    {
-      icon: Brain,
-      Name: "AI Readiness Assessment",
-      Content:
-        "Evaluate your organization's AI maturity, data infrastructure, and talent capabilities to build a comprehensive AI transformation roadmap.",
-    },
-    {
-      icon: clouldicon,
-      Name: "Cloud Readiness Assessment",
-      Content:
-        "Analyze your current infrastructure, applications, and processes to create a strategic cloud migration and optimization plan.",
-    },
-    {
-      icon: graph,
-      Name: "Digital Maturity Assessment",
-      Content:
-        "Measure your organization's digital transformation progress across people, processes, technology, and culture dimensions.",
-    },
-  ];
+  
 
   return (
     <section
@@ -55,9 +34,7 @@ const Strategy = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="font-syne font-bold text-center max-w-[90%] sm:max-w-[678px] mx-auto 
-        text-[28px] sm:text-[36px] md:text-[48px] leading-[1.1] break-words text-white pt-8 md:pt-0 "
-      >
+        className="font-syne font-bold text-center max-w-[90%] sm:max-w-[678px] mx-auto text-[28px] sm:text-[36px] md:text-[48px] leading-[1.1] break-words text-white pt-8 md:pt-0 ">
         Strategy & Advisory
 
       </motion.h3>
@@ -126,9 +103,7 @@ const Strategy = () => {
               </p>
 
               <button
-                className="bg-white text-[#192C62] rounded-full px-5 sm:px-6 py-2 mx-auto block
-              transition duration-300 hover:text-white hover:bg-[#192C62] hover:scale-105"
-              >
+                className="bg-white text-[#192C62] rounded-full px-5 sm:px-6 py-2 mx-auto block transition duration-300 hover:text-white hover:bg-[#192C62] hover:scale-105">
                 Talk to Us
               </button>
             </div>

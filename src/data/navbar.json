@@ -7,12 +7,30 @@
         {
           "title": "Industries",
           "items": [
-            "Healthcare & Lifesciences",
-            "Industrial",
-            "Retail and CPG",
-            "Travel & Hospitality",
-            "Automotive",
-            "HR Tech"
+            {
+              "label":"Healthcare & Lifesciences",
+              "slug":"/pagenotfound"
+            },
+            {
+              "label":"Industrial",
+              "slug":"/pagenotfound"
+            },
+            {
+              "label":"Retail and CPG",
+              "slug":"/pagenotfound"
+            },
+            {
+             "label":"Travel & Hospitality",
+             "slug":"/pagenotfound" 
+            },
+            {
+              "label":"Automotive",
+              "slug":"/pagenotfound"
+            },
+            {
+              "label":"HR Tech",
+              "slug":"/pagenotfound"
+            }
           ]
         }
       ]
@@ -24,10 +42,22 @@
         {
           "title": "Company",
           "items": [
-            "About us",
-            "Partners",
-            "Leadership",
-            "Career"
+            {
+              "label": "About us",
+              "slug": "/aboutus"
+            },
+            {
+              "label": "Partners",
+              "slug": "/pagenotfound"
+            },
+            {
+              "label": "Leadership",
+              "slug": "/pagenotfound"
+            },
+            {
+              "label": "Career",
+              "slug": "/pagenotfound"
+            }
           ]
         }
       ]
@@ -39,8 +69,14 @@
         {
           "title": "Solutions",
           "items": [
-            "ClayCloudHR",
-            "AI powered Employee Query BOT"
+             {
+               "label":"ClayCloudHR",
+               "slug":"/pagenotfound"
+            },
+            {
+              "label":"AI powered Employee Query BOT",
+              "slug":"/pagenotfound"
+            }
           ]
         }
       ]

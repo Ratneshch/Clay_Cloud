@@ -16,7 +16,7 @@ const UseCaseCard = ({ icon, title, description, shadowColor }) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="bg-purple-100 p-4 rounded-lg mb-4">
-        <img src={icon.src} alt={title} className="h-8 w-8" />
+        <img src={icon} alt={title} className="h-8 w-8" />
       </div>
       <h3 className="text-[18px] sm:text-[24px] font-inter mb-2 text-black font-bold">
         {title}

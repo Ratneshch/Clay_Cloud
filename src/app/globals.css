@@ -220,3 +220,15 @@ body {
   scroll-behavior: smooth;
 }
 
+@keyframes marqueeScroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .marquee {
+          width: max-content;
+          animation: marqueeScroll 18s linear infinite;
+        }

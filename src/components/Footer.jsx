@@ -113,6 +113,19 @@ const FooterColumn = ({ title, items }) => {
             );
           }
 
+          // Items with label & path (Company)
+          // Safe Link
+     if ((item.path || item.slug) && (item.label || item.title)) {
+          const href = item.path || item.slug;
+          const text = item.label || item.title;
+        return (
+            <li key={index}>
+            <Link href={href}>{text}</Link>
+          </li>
+       );
+    }
+
+
           return null;
         })}
       </ul>

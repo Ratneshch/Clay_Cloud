@@ -119,13 +119,12 @@ const Navbar = () => {
 
                             <ul className="space-y-2">
                               {col.items.map((sub) => (
-                                <li key={typeof sub === "string" ? sub : sub.label || sub.title}>
-                                  <Link
-                                    href={sub.slug}
+                                <li key={typeof sub === "string" ? sub : (sub.label || sub.title)}>
+                                  <Link href={sub.slug}
                                     className="w-full text-left text-sm sm:text-base text-slate-800 hover:text-[#1545e6]"
                                     onClick={() => handleClick(sub)}
                                   >
-                                    {typeof sub === "string" ? sub : sub.label || sub.title}
+                                    {typeof sub === "string" ? sub : (sub.label || sub.title)}
                                   </Link>
                                 </li>
                               ))}

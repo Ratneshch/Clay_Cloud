@@ -3,53 +3,11 @@
 import React from "react";
 import UseCaseCard from "./UseCaseCard";
 import { motion } from "framer-motion";
+import useCaseData from "@/data/usecase.json";
 
-import ppl from "../assets/ppl.png";
-import cloud from "../assets/cloud.png";
-import earth from "../assets/earth.png";
-import hand from "../assets/hand.png";
-import bulb from "../assets/bulb.png";
 
 const UseCase = () => {
-  const useCaseData = [
-    {
-      id: 1,
-      title: "Cloud-Native DNA",
-      description: "Deep expertise across AWS, Azure, and Databricks ecosystems.",
-      icon: cloud,
-      shadowColor: "#7677CD",
-    },
-    {
-      id: 2,
-      title: "AI-Driven Innovation",
-      description:
-        "Building intelligent solutions powered by advanced AI and GenAI models.",
-      icon: bulb,
-      shadowColor: "#e901f5",
-    },
-    {
-      id: 3,
-      title: "Customer-First Mindset",
-      description:
-        "Every engagement is outcome-focused and co-created with clients.",
-      icon: hand,
-      shadowColor: "#075515",
-    },
-    {
-      id: 4,
-      title: "Global Delivery Model",
-      description: "Agile teams across India and the US for continuous delivery.",
-      icon: earth,
-      shadowColor: "#017991",
-    },
-    {
-      id: 5,
-      title: "Strong Partner Ecosystem",
-      description: "Strategic alliances that accelerate customer success.",
-      icon: ppl,
-      shadowColor: "#0365b5",
-    },
-  ];
+ 
 
   return (
     <motion.div
