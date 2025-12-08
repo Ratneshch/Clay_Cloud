@@ -1,5 +1,5 @@
 {
-  "navItems" :[
+  "navItems": [
     {
       "label": "Industries",
       "key": "industries",
@@ -8,28 +8,28 @@
           "title": "Industries",
           "items": [
             {
-              "label":"Healthcare & Lifesciences",
-              "slug":"/pagenotfound"
+              "label": "Healthcare & Lifesciences",
+              "slug": "/pagenotfound"
             },
             {
-              "label":"Industrial",
-              "slug":"/pagenotfound"
+              "label": "Industrial",
+              "slug": "/pagenotfound"
             },
             {
-              "label":"Retail and CPG",
-              "slug":"/pagenotfound"
+              "label": "Retail and CPG",
+              "slug": "/pagenotfound"
             },
             {
-             "label":"Travel & Hospitality",
-             "slug":"/pagenotfound" 
+              "label": "Travel & Hospitality",
+              "slug": "/pagenotfound"
             },
             {
-              "label":"Automotive",
-              "slug":"/pagenotfound"
+              "label": "Automotive",
+              "slug": "/pagenotfound"
             },
             {
-              "label":"HR Tech",
-              "slug":"/pagenotfound"
+              "label": "HR Tech",
+              "slug": "/pagenotfound"
             }
           ]
         }
@@ -69,13 +69,13 @@
         {
           "title": "Solutions",
           "items": [
-             {
-               "label":"ClayCloudHR",
-               "slug":"/pagenotfound"
+            {
+              "label": "ClayCloudHR",
+              "slug": "/solutions/claycloudhr"
             },
             {
-              "label":"AI powered Employee Query BOT",
-              "slug":"/pagenotfound"
+              "label": "AI powered Employee Query BOT",
+              "slug": "/pagenotfound"
             }
           ]
         }
@@ -91,14 +91,38 @@
             {
               "label": "Consulting Services",
               "children": [
-                { "name": "Data & AI Services", "slug": "data-and-ai-services" },
-                { "name": "Generative AI (GenAI) Solutions", "slug": "generative-ai-genai-solutions" },
-                { "name": "DevOps & Cloud Engineering", "slug": "devops-cloud-engineering" },
-                { "name": "Application Modernization", "slug": "application-modernization" },
-                { "name": "UI/UX Design & Engineering", "slug": "ui-ux-design-engineering" },
-                { "name": "Cybersecurity Services", "slug": "cybersecurity-services" },
-                { "name": "Managed Services", "slug": "managed-services" },
-                { "name": "Cloud Consulting & Advisory", "slug": "cloud-consulting-advisory" }
+                {
+                  "name": "Data & AI Services",
+                  "slug": "data-and-ai-services"
+                },
+                {
+                  "name": "Generative AI (GenAI) Solutions",
+                  "slug": "generative-ai-genai-solutions"
+                },
+                {
+                  "name": "DevOps & Cloud Engineering",
+                  "slug": "devops-cloud-engineering"
+                },
+                {
+                  "name": "Application Modernization",
+                  "slug": "application-modernization"
+                },
+                {
+                  "name": "UI/UX Design & Engineering",
+                  "slug": "ui-ux-design-engineering"
+                },
+                {
+                  "name": "Cybersecurity Services",
+                  "slug": "cybersecurity-services"
+                },
+                {
+                  "name": "Managed Services",
+                  "slug": "managed-services"
+                },
+                {
+                  "name": "Cloud Consulting & Advisory",
+                  "slug": "cloud-consulting-advisory"
+                }
               ]
             },
             "Pay per service model",
@@ -116,10 +140,22 @@
         {
           "title": "Insights",
           "items": [
-            { "title": "Media", "slug": "/blog" },
-            { "title": "Case studies – Public & Private", "slug": "/blog" },
-            { "title": "Blog", "slug": "/blog" },
-            { "title": "Event & Webinars", "slug": "/blog" }
+            {
+              "title": "Media",
+              "slug": "/blog"
+            },
+            {
+              "title": "Case studies – Public & Private",
+              "slug": "/blog"
+            },
+            {
+              "title": "Blog",
+              "slug": "/blog"
+            },
+            {
+              "title": "Event & Webinars",
+              "slug": "/blog"
+            }
           ]
         }
       ]
