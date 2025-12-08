@@ -78,7 +78,7 @@ const Page = () => {
         </div>
       </section>
       <section className="md:mt-10">
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row justify-between">
           {/* LEFT CONTENT */}
           <div className="md:p-16 px-4 text-center md:text-start">
             <h1 className="text-3xl md:text-3xl lg:text-[68px] font-bold text-slate-900">
@@ -158,14 +158,7 @@ const Page = () => {
   whileHover={{
     scale:1.08
   }}
-  className="
-    w-full max-w-[350px]
-    h-[240px]
-    rounded-2xl
-    p-[2px]
-    bg-linear-to-r from-blue-500 via-blue-400 to-cyan-300
-    transition
-  "
+  className=" w-full max-w-[350px] h-[240px] rounded-2xl p-[2px] bg-linear-to-r from-blue-500 via-blue-400 to-cyan-300 transition"
 >
   <div className="w-full h-full rounded-2xl bg-white hover:bg-gray-200 transition flex flex-col justify-start gap-4 px-6 py:3 md:py-6">
     <h1 className="text-[18px] sm:text-[20px] font-syne font-bold pt-6">

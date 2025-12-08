@@ -73,23 +73,22 @@ const Footer = () => {
   );
 };
 
-
 const FooterColumn = ({ title, items }) => {
   return (
     <div>
       <h3 className="font-bold text-[16px] sm:text-[18px] mb-3">{title}</h3>
       <ul className="space-y-2 text-[14px] sm:text-[16px] text-slate-400">
         {items.map((item, index) => {
-          // If item is simple text
+          // Simple string items
           if (typeof item === "string") {
             return (
               <li key={index}>
-                <Link href="#">{item}</Link>
+                <Link href="/pagenotfound">{item}</Link>
               </li>
             );
           }
 
-          // If item has nested children (Services section)
+          // Items with nested children (Services)
           if (item.children) {
             return (
               <li key={index}>
@@ -104,6 +103,28 @@ const FooterColumn = ({ title, items }) => {
               </li>
             );
           }
+
+          // Items with title & slug (Insights)
+          if (item.title && item.slug) {
+            return (
+              <li key={index}>
+                <Link href={item.slug}>{item.title}</Link>
+              </li>
+            );
+          }
+
+          // Items with label & path (Company)
+          // Safe Link
+     if ((item.path || item.slug) && (item.label || item.title)) {
+          const href = item.path || item.slug;
+          const text = item.label || item.title;
+        return (
+            <li key={index}>
+            <Link href={href}>{text}</Link>
+          </li>
+       );
+    }
+
 
           return null;
         })}
