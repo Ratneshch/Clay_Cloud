@@ -1,14 +1,11 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { GoDotFill } from "react-icons/go";
-import { BiSolidRightArrowSquare } from "react-icons/bi";
 import { services } from "@/data/services";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const scrollRef = useRef(null);
   const btnRefs = useRef([]);
 
   const handleButtons = (index) => {
