@@ -1,17 +1,63 @@
 [
-  {
-    "id": 1,
-    "icon": "users",
-    "title": "ClayCloudHR",
-    "subtitle": "AI-Powered Payroll & HR Management",
-    "description":
-      "Automate payroll processing, compliance management, and employee lifecycle with intelligent AI-driven workflows.",
-    "image": "/images/HR Dashboard.png",
-    "tags": ["Payroll Automation", "Compliance", "Analytics"]
+{
+  "id": 1,
+  "icon": "users",
+  "slug": "claycloudhr",
+  "title": "ClayCloudHR",
+  "component": "ClayCloudHR",
+  "subtitle": "AI-Powered Payroll & HR Management",
+  "description": "Automate payroll processing, compliance management, and employee lifecycle with intelligent AI-driven workflows.",
+  "image": "/images/HR Dashboard.png",
+  "tags": ["Payroll Automation", "Compliance", "Analytics"],
+
+  "hero": {
+    "heading": "Empower Your HR Operations with One Unified Platform",
+    "subheading": "Streamline recruitment, payroll, performance management, and employee engagement with our all-in-one HR solution.",
+    "efficiency": "Efficiency Boost",
+    "image": "/images/image.jpg",
+    "saved": "Saved Monthly",
+    "nocard": "No Credit Card Required",
+    "trust": "10,000+ Companies Trust Us",
+    "rating": "4.9/5 Rating"
   },
+
+  "sections": [
+    {
+      "id": 0,
+      "icon": "/icons/symbol.png",
+      "title": "Payroll, Time, and Benefits",
+      "description": "Automate payroll processing, track time and attendance, and manage employee benefits seamlessly. Our integrated system ensures accuracy, compliance, and timely payments while reducing administrative overhead.",
+      "image": "/images/PayrollSystem.png"
+    },
+    {
+      "id": 1,
+      "icon": "/icons/watch.png",
+      "title": "Attendance Tracking",
+      "description": "Easily monitor employee check-ins, working hours, and absences in real time. Streamline attendance records and improve workforce efficiency with automated tracking.",
+      "image": "/images/Atend.png"
+    },
+    {
+      "id": 2,
+      "icon": "/icons/trophy.png",
+      "title": "Performance Management",
+      "description": "Track employee goals, evaluate progress, and boost productivity with continuous feedback and performance reviews.",
+      "image": "/images/Perfomance.png"
+    },
+    {
+      "id": 3,
+      "icon": "/icons/analytics.png",
+      "title": "Analytics and Insights",
+      "description": "Make data-driven decisions with smart dashboards and reports, providing real-time insights into workforce performance and HR metrics.",
+      "image": "/images/Analytics.png"
+    }
+  ]
+},
+
+
   {
     "id": 2,
     "icon": "robot",
+    "slug": "clay-cloud-ai",
     "title": "Employee AI Query Bot",
     "subtitle": "Intelligent Virtual Assistant",
     "description":
@@ -19,5 +65,7 @@
     "image": "/images/AI Bot Interface.png",
     "tags": ["NLP", "24/7 Support", "Multi-language"]
   }
+
 ]
+
 
