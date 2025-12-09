@@ -58,7 +58,7 @@ const ClayCloudHR = () => {
     <div className="min-h-screen bg-[#050712] pt-15 text-[#F8F8FA] overflow-x-hidden">
       <main className="mx-auto max-w-8xl px-0 md:px-4 lg:px-0 relative z-10">
         {/* Hero Section - Extended dark background */}
-        <section className="relative flex flex-col md:flex-row md:pl-15 sm:gap-15 py-16 lg:py-24 -mt-15 pt-24 lg:pt-32">
+        <section className="relative flex flex-col md:flex-row md:pl-25 sm:gap-15 py-16 lg:py-24 -mt-15 pt-24 lg:pt-32">
 
           {/* Dark background extending behind navbar */}
           <div className="absolute inset-0 -z-20 bg-[#050712] -mt-15 pt-15 lg:pt-24" />
@@ -114,7 +114,7 @@ const ClayCloudHR = () => {
           </div>
 
           {/* Hero right side glass panel */}
-          <div className="relative md:pl-15 px-5 mt-10 w-full max-w-lg lg:mt-0 lg:w-7/12 xl:w-2/3">
+          <div className="relative md:pl-25 px-5 mt-10 w-full max-w-2xl pt-0 md:pt-15 lg:mt-0 lg:w-7/12 xl:w-2/3">
             <div className="relative rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_0_60px_rgba(6,15,35,0.9)] backdrop-blur-2xl">
               <div className="flex items-center justify-between">
                 <div>
