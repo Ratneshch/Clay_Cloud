@@ -58,12 +58,13 @@ const ClayCloudHR = () => {
     <div className="min-h-screen bg-[#050712] pt-15 text-[#F8F8FA] overflow-x-hidden">
       <main className="mx-auto max-w-8xl px-0 md:px-4 lg:px-0 relative z-10">
         {/* Hero Section - Extended dark background */}
-        <section className="relative md:pl-15 sm:gap-15 py-16 lg:flex-row lg:py-24 -mt-15 pt-24 lg:pt-32">
+        <section className="relative flex flex-col md:flex-row md:pl-15 sm:gap-15 py-16 lg:py-24 -mt-15 pt-24 lg:pt-32">
+
           {/* Dark background extending behind navbar */}
           <div className="absolute inset-0 -z-20 bg-[#050712] -mt-15 pt-15 lg:pt-24" />
 
           <div className="relative z-10 max-w-xl space-y-5 text-center px-5 md:pl-15 lg:text-left">
-            <div className="inline-flex items-center gap-5 rounded-full border border-[#3ABEF9]/30 bg-[#0B0E15]/80 px-5 py-2 text-[20px] text-sky-200 shadow-[0_0_25px_rgba(58,190,249,0.5)] backdrop-blur-xl">
+            <div className="inline-flex items-center gap-5 rounded-full border border-[#3ABEF9]/30 bg-[#0B0E15]/80 px-5 py-2 text-base sm:text-[20px] text-sky-200 shadow-[0_0_25px_rgba(58,190,249,0.5)] backdrop-blur-xl">
               <span className="h-1.5 w-1.5 rounded-full bg-[#3ABEF9]" />
               ClayCloudHR - End-to-End Payroll Software
             </div>
@@ -208,7 +209,7 @@ const ClayCloudHR = () => {
                   >
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
-                  
+
                 </div>
 
                 <h3 className="text-base sm:text-lg font-semibold text-black">
