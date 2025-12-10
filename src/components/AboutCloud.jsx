@@ -2,7 +2,7 @@
 
 import React from 'react'
 import data from "@/data/about.json";
-import AboutCard from './AboutCard'
+import AboutCard from '@/components/AboutCard'
 import { motion } from "framer-motion";
 
 const AboutCloud = () => {
