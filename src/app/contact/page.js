@@ -167,7 +167,7 @@ export default function ContactPage() {
 
   {/* Message */}
   <div className="relative">
-    <Type
+    <Type 
       className="absolute left-4 top-4 text-gray-400 pointer-events-none"
       size={20}
     />
