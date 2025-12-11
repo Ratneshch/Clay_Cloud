@@ -9,27 +9,27 @@
           "items": [
             {
               "label": "Healthcare & Lifesciences",
-              "slug": "/pagenotfound"
+              "slug": "/industries/healthcare"
             },
             {
-              "label": "Industrial",
-              "slug": "/pagenotfound"
+              "label": "Industrial & Manufacturing",
+              "slug": "/industries/manufacturing"
             },
             {
               "label": "Retail and CPG",
-              "slug": "/pagenotfound"
+              "slug": "/industries/retail"
             },
             {
               "label": "Travel & Hospitality",
-              "slug": "/pagenotfound"
+              "slug": "/industries/travel"
             },
             {
               "label": "Automotive",
-              "slug": "/pagenotfound"
+              "slug": "/industries/automotive"
             },
             {
               "label": "HR Tech",
-              "slug": "/pagenotfound"
+              "slug": "/industries/hrtech"
             }
           ]
         }
