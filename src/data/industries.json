@@ -1,0 +1,73 @@
+{
+  "healthcare": {
+    "title": "Healthcare & Life Sciences",
+    "summary": "Digital health, AI diagnostics, GenAI patient engagement, and secure medical data platforms built on AWS and Microsoft to improve care, accelerate research, and optimise clinical operations.",
+    "usps": [
+      "HIPAA-ready cloud architectures",
+      "AI & imaging analytics",
+      "GenAI patient & clinician assistance",
+      "Clinical data interoperability"
+    ],
+    "longContent": "Healthcare and Life Sciences organisations are reimagining patient care, clinical research, and drug discovery with the power of cloud and AI. With AWS and Microsoft Azure, providers can securely modernise legacy EMR/EHR systems, build interoperable data platforms, and accelerate digital health initiatives. AI-driven diagnostics, medical imaging analytics, and GenAI-based patient engagement platforms are enabling personalised treatment at scale. Using HIPAA-compliant solutions, healthcare companies can securely store and analyse vast datasets, leverage predictive analytics for early disease detection, and automate clinical trial workflows to reduce time-to-market for new therapies. From telemedicine to pharmacy automation and population health management, cloud modernisation is reshaping how care is delivered—and empowering organisations to deliver better outcomes with reduced operational cost."
+  },
+
+  "manufacturing": {
+    "title": "Industrial & Manufacturing",
+    "summary": "Intelligent factories powered by IoT, AI analytics, predictive maintenance, and digital twins — creating safer, more efficient, and future-ready industrial operations.",
+    "usps": [
+      "Smart factory automation",
+      "Predictive maintenance",
+      "IoT + digital twins",
+      "Sustainability & operational efficiency"
+    ],
+    "longContent": "Industrial and smart manufacturing companies are rapidly adopting cloud to improve efficiency, product quality, and workforce productivity. AWS IoT, Azure IoT, and AI/ML services make it possible to build intelligent factories powered by real-time operational analytics. Through cloud-first transformation, organisations can modernise MES/ERP systems, integrate shop-floor and supply chain data, and automate quality controls using computer vision. Predictive maintenance powered by AI significantly reduces downtime, while digital twins enable virtual modelling of assets and production lines for faster decision-making. GenAI is helping manufacturing teams design new products, generate supply-chain recommendations, and improve safety reporting using natural-language interfaces. Cloud modernisation is accelerating Industry 4.0, empowering manufacturers to scale faster while achieving agility, cost optimisation, and sustainability."
+  },
+
+  "retail": {
+    "title": "Retail & CPG",
+    "summary": "Personalised commerce, demand forecasting, GenAI-powered marketing, and omnichannel supply chain visibility to drive loyalty, profitability, and growth.",
+    "usps": [
+      "Personalised commerce",
+      "Real-time supply chain visibility",
+      "GenAI catalog & marketing automation",
+      "Demand forecasting"
+    ],
+    "longContent": "Retail and CPG brands are leveraging the cloud to deliver personalised shopping experiences, create resilient supply chains, and optimise omnichannel operations. Using AWS and Microsoft AI analytics, retailers gain deep insights into consumer behaviour, demand forecasting, pricing, and inventory planning. GenAI is transforming digital commerce with automated product cataloguing, AI-driven customer support, and hyper-personalised marketing content. Store and warehouse operations can be modernised through smart automation, demand sensing, and real-time logistics tracking. Cloud data platforms enable a unified 360° customer view, while secure and scalable ecommerce infrastructure supports global growth during peak seasons. Whether online, in-store, or hybrid commerce—AI and cloud modernisation are helping retailers deliver superior customer loyalty and business profitability."
+  },
+
+  "travel": {
+    "title": "Travel & Hospitality",
+    "summary": "AI-driven guest personalisation, modern reservation platforms, real-time pricing and occupancy analytics, and GenAI concierge experiences to elevate every customer journey.",
+    "usps": [
+      "Real-time revenue optimisation",
+      "AI guest experience",
+      "Smart contactless operations",
+      "Loyalty enhancement via analytics"
+    ],
+    "longContent": "Travel & Hospitality organisations are reinventing guest experience through AI-powered personalisation, predictive operations, and frictionless digital engagement. Cloud platforms such as AWS and Azure make it easy to modernise reservation systems, unify guest data across touchpoints, and deploy real-time analytics for route and occupancy optimisation. AI chatbots, voice assistants, and GenAI-based concierge services enable 24/7 personalised travel support. Hotels and airlines are enhancing revenue management through demand forecasting, dynamic pricing, and sentiment analytics. By modernising legacy PMS, GDS, and loyalty systems, organisations unlock new service opportunities—from smart rooms to hyper-personalised travel recommendations. Cloud transformation creates operational resilience, elevating guest satisfaction and driving long-term loyalty."
+  },
+
+  "automotive": {
+    "title": "Automotive",
+    "summary": "Cloud-enabled engineering, connected mobility, predictive analytics, OTA updates, and autonomous driving innovations powered by AI and GenAI.",
+    "usps": [
+      "Connected vehicle platforms",
+      "Autonomous & ADAS analytics",
+      "OTA software delivery",
+      "EV charging/telemetry intelligence"
+    ],
+    "longContent": "The automotive industry is moving toward connected vehicles, autonomous driving, and software-defined mobility. AWS and Microsoft cloud services enable OEMs, suppliers, and dealerships to modernise their platforms and leverage AI at scale. Real-time telemetry, digital twins, predictive analytics, and GenAI-powered engineering assistance accelerate vehicle design and testing. Manufacturers can optimise procurement, production, and after-sales services using integrated data platforms. Intelligent voice assistants, advanced driver-assistance systems (ADAS), and EV charging analytics platforms powered by AI are improving road safety and enhancing driving experience. The cloud also simplifies over-the-air (OTA) updates, cybersecurity, and fleet management, creating a seamless ecosystem for next-gen mobility."
+  },
+
+  "hrtech": {
+    "title": "HR Tech",
+    "summary": "Cloud-native HR platforms with AI/GenAI for talent intelligence, automated recruitment, personalised learning, and predictive people analytics — shaping the future of work.",
+    "usps": [
+      "Talent analytics & attrition prediction",
+      "AI recruitment automation",
+      "GenAI L&D content",
+      "Multi-region compliant HR cloud"
+    ],
+    "longContent": "HR technology platforms are transforming workforce management and employee experience with AI, automation, and secure cloud-native architectures. Using AWS and Azure, HR Tech companies can modernise monolithic HRMS solutions into scalable, microservices-based SaaS applications. AI-based talent intelligence, predictive attrition analytics, skill-gap analysis, and automated recruitment assistants are reshaping how organisations attract and retain talent. GenAI can generate personalised learning content, automate policy communication, support helpdesk functions, and create dynamic career paths. Cloud-based data platforms ensure compliance, payroll accuracy, and real-time workforce analytics across multiple regions. With secure and scalable cloud infrastructure, HR Tech providers can deliver faster innovation, improved user experience, and reduced operational cost—supporting the future of work."
+  }
+}
