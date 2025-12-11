@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import cards from "@/data/strategy.json";
 import { motion, useAnimation, useInView } from "framer-motion";
+import Link from "next/link";
 
 
 const Strategy = () => {
@@ -102,10 +103,10 @@ const Strategy = () => {
                 {card.Content}
               </p>
 
-              <button
+              <Link href="/enquiry"
                 className="bg-white text-[#192C62] rounded-full px-5 sm:px-6 py-2 mx-auto block transition duration-300 hover:text-white hover:bg-[#192C62] hover:scale-105">
                 Talk to Us
-              </button>
+              </Link>
             </div>
           </motion.li>
         ))}
