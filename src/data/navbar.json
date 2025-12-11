@@ -133,32 +133,32 @@
         }
       ]
     },
+   {
+  "label": "Insights",
+  "key": "insights",
+  "columns": [
     {
-      "label": "Insights",
-      "key": "insights",
-      "columns": [
+      "title": "Insights",
+      "items": [
         {
-          "title": "Insights",
-          "items": [
-            {
-              "title": "Media",
-              "slug": "/blog"
-            },
-            {
-              "title": "Case studies – Public & Private",
-              "slug": "/blog"
-            },
-            {
-              "title": "Blog",
-              "slug": "/blog"
-            },
-            {
-              "title": "Event & Webinars",
-              "slug": "/blog"
-            }
-          ]
+          "label": "Media",
+          "slug": "/blog"
+        },
+        {
+          "label": "Case studies – Public & Private",
+          "slug": "/blog"
+        },
+        {
+          "label": "Blog",
+          "slug": "/blog"
+        },
+        {
+          "label": "Event & Webinars",
+          "slug": "/blog"
         }
       ]
     }
+  ]
+}
   ]
 }
