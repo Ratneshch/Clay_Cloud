@@ -98,17 +98,15 @@ const Navbar = () => {
                     <ChevronDown size={14} />
                   </button>
 
-                  {/* STANDARD MEGAMENU */}
+                  {/* Standard MegaMenu */}
                   {isActive && item.key !== "outsourcing" && (
                     <div
                       ref={dropdownRef}
                       onMouseEnter={() => setOpenMenu(item.key)}
                       onMouseLeave={() => {
                         setOpenMenu(null);
-                        setOpenServiceChild(false);
                       }}
                       className="fixed top-[64px] w-full md:w-screen lg:w-6xl left-1/2 -translate-x-1/2 bg-white border-t border-slate-200 shadow-xl z-50 mt-4.5 py-6 sm:py-8 rounded-b-lg overflow-auto rounded-2xl"
-                      style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 sm:px-10">
                         {item.columns.map((col) => (
@@ -119,12 +117,12 @@ const Navbar = () => {
 
                             <ul className="space-y-2">
                               {col.items.map((sub) => (
-                                <li key={typeof sub === "string" ? sub : (sub.label || sub.title)}>
-                                  <Link href={sub.slug}
+                                <li key={sub.label || sub.title}>
+                                  <Link
+                                    href={sub.slug}
                                     className="w-full text-left text-sm sm:text-base text-slate-800 hover:text-[#1545e6]"
-                                    onClick={() => handleClick(sub)}
                                   >
-                                    {typeof sub === "string" ? sub : (sub.label || sub.title)}
+                                    {sub.label || sub.title}
                                   </Link>
                                 </li>
                               ))}
@@ -135,17 +133,13 @@ const Navbar = () => {
                     </div>
                   )}
 
-                  {/* SERVICES MENU */}
+                  {/* Outsourcing Menu */}
                   {isActive && item.key === "outsourcing" && (
                     <div
                       ref={dropdownRef}
                       onMouseEnter={() => setOpenMenu(item.key)}
-                      onMouseLeave={() => {
-                        setOpenMenu(null);
-                        if (!isMobile) setOpenServiceChild(false);
-                      }}
+                      onMouseLeave={() => setOpenMenu(null)}
                       className="fixed left-1/2 -translate-x-1/2 top-[64px] w-full md:w-screen lg:w-6xl bg-white border-t border-slate-200 shadow-xl z-50 py-6 sm:py-8 rounded-b-lg overflow-auto mt-4.5 rounded-2xl"
-                      style={{ WebkitOverflowScrolling: "touch" }}
                     >
                       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 sm:px-10">
                         {/* LEFT COLUMN */}
@@ -155,26 +149,19 @@ const Navbar = () => {
                           </h3>
 
                           <ul className="space-y-3">
-                            {item.columns[0].items.map((sub) => {
-                              const isObj = typeof sub === "object";
-
-                              return (
-                                <li key={isObj ? sub.label : sub}>
-                                  <button
-                                    className={`w-full text-left text-sm sm:text-base ${
-                                      isObj
-                                        ? "text-[#1545e6] font-semibold"
-                                        : "text-slate-800 hover:text-[#1545e6]"
-                                    }`}
-                                    onMouseEnter={() =>
-                                      !isMobile && setOpenServiceChild(isObj)
-                                    }
-                                  >
-                                    {isObj ? sub.label : sub}
-                                  </button>
+                            {item.columns[0].items.map((sub) =>
+                              typeof sub === "string" ? (
+                                <li key={sub} className="text-slate-800">
+                                  {sub}
                                 </li>
-                              );
-                            })}
+                              ) : (
+                                <li key={sub.label}>
+                                  <span className="text-[#1545e6] font-semibold">
+                                    {sub.label}
+                                  </span>
+                                </li>
+                              )
+                            )}
                           </ul>
                         </div>
 
@@ -189,7 +176,7 @@ const Navbar = () => {
                               <Link
                                 key={s.slug}
                                 href={`/services/${s.slug}`}
-                                className="text-sm sm:text-base w-full text-left text-slate-800 hover:text-[#1545e6] block"
+                                className="text-sm sm:text-base text-slate-800 hover:text-[#1545e6] block"
                               >
                                 {s.name}
                               </Link>
@@ -225,7 +212,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU (FIXED) */}
       {isOpen && (
         <div className="md:hidden w-full bg-white border-b border-slate-100">
           <div className="px-4 py-3 max-h-[75vh] overflow-y-auto">
@@ -245,39 +232,55 @@ const Navbar = () => {
                   {openMobileKey === item.key && (
                     <div className="pl-3 pt-1">
                       <ul className="space-y-1">
+
                         {item.columns[0].items.map((sub) => {
                           const isObj = typeof sub === "object";
 
-                          if (!isObj)
+                          // simple string items
+                          if (!isObj) {
                             return (
                               <li key={sub}>
-                                <button className="w-full text-left py-1">
-                                  {sub}
-                                </button>
+                                <span className="block py-1">{sub}</span>
                               </li>
                             );
+                          }
 
+                          // children groups
+                          if (sub.children) {
+                            return (
+                              <div key={sub.label} className="mt-3">
+                                <h4 className="text-sm font-semibold text-[#1545e6] mb-2">
+                                  {sub.label}
+                                </h4>
+
+                                <ul className="space-y-2">
+                                  {sub.children.map((s) => (
+                                    <li key={s.slug}>
+                                      <Link
+                                        href={`/services/${s.slug}`}
+                                        className="block text-sm leading-snug"
+                                        onClick={() => setIsOpen(false)}
+                                      >
+                                        {s.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            );
+                          }
+
+                          // normal navigation items
                           return (
-                            <div key={sub.label} className="mt-3">
-                              <h4 className="text-sm font-semibold text-[#1545e6] mb-2">
+                            <li key={sub.label}>
+                              <Link
+                                href={sub.slug}
+                                className="block py-1"
+                                onClick={() => setIsOpen(false)}
+                              >
                                 {sub.label}
-                              </h4>
-
-                              <ul className="space-y-2">
-                                {sub.children.map((s) => (
-                                  <li key={s.slug}>
-                                    <Link
-                                      href={`/services/${s.slug}`}
-                                      className="block text-sm leading-snug"
-                                      onClick={() => setIsOpen(false)}
-                                    >
-                                      {s.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-
-                            </div>
+                              </Link>
+                            </li>
                           );
                         })}
                       </ul>
