@@ -178,6 +178,12 @@ export default function ContactPage() {
       focus:outline-none focus:ring-2 focus:ring-blue-300"
     />
   </div>
+  <div class="flex items-center justify-center ">
+  <button class="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-blue-900/40 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+    Submit
+  </button>
+</div>
+
 
 </div>
 
