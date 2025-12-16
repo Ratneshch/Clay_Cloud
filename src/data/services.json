@@ -50,7 +50,7 @@
       "Heading": "Harness the power of GenAI to reinvent experiences, operations, and productivity.",
       "Description": "From automating knowledge workflows to building conversational copilots, we help enterprises integrate GenAI responsibly and effectively.",
       "images": "/images/gen.webp",
-      "tag1": "Our GenAI offerings",
+      "tag1": "GenAI offerings",
       "values": [
         "Custom Copilots for Enterprises (built on OpenAI, AWS Bedrock, or Azure OpenAI)",
         "Intelligent Document Processing",
@@ -256,7 +256,7 @@
       "Heading": "Focus on growth while we manage your digital infrastructure.",
       "Description": "Our 24x7 managed services ensure your systems are secure, optimized, and always-on.",
       "images": "/images/manage.webp",
-      "tag1": "Managed Offerings",
+      "tag1": "Offerings",
       "values": [
         "Cloud Operations & Monitoring",
         "Application & Database Management",

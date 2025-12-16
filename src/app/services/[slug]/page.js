@@ -10,9 +10,8 @@ import { FaServer } from "react-icons/fa6";
 import { IoHardwareChipOutline } from "react-icons/io5";
 import { FaCloud } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
-
-
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Page = () => {
   const params = useParams();
@@ -118,8 +117,8 @@ const Page = () => {
             {service.values2.map((item, index) => (
               <div key={index} className="flex flex-col items-center justify-center gap-4">
                 <motion.div whileHover={{ scale: 0.8 }}>
-                  {/* ✅ FIXED IMAGE */}
-                  <img src="/images/brain.png" alt="icon" />
+                  {/*  FIXED IMAGE */}
+                  <Image src="/images/brain.png" alt="icon" width={70} height={50} />
                 </motion.div>
 
                 <h3 className="text-lg font-semibold text-black w-[70%]">
