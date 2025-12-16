@@ -5,7 +5,7 @@
       "slug": "data-and-ai-services",
       "Heading": "Turn your data into a strategic advantage.",
       "Description": "We design and implement end-to-end data platforms, AI/ML models, and analytics solutions that help you make faster, smarter decisions.",
-      "images": "/images/ai.jpeg",
+      "images": "/images/ai.webp",
       "tag1": "What we offer",
       "values": [
         "Data Strategy & Architecture",
@@ -49,7 +49,7 @@
       "slug": "generative-ai-genai-solutions",
       "Heading": "Harness the power of GenAI to reinvent experiences, operations, and productivity.",
       "Description": "From automating knowledge workflows to building conversational copilots, we help enterprises integrate GenAI responsibly and effectively.",
-      "images": "/images/gen.jpeg",
+      "images": "/images/gen.webp",
       "tag1": "Our GenAI offerings",
       "values": [
         "Custom Copilots for Enterprises (built on OpenAI, AWS Bedrock, or Azure OpenAI)",
@@ -91,7 +91,7 @@
       "slug": "devops-cloud-engineering",
       "Heading": "Accelerate your product delivery with modern DevOps practices.",
       "Description": "We help you design, build, and operate cloud-native environments that ensure reliability, security, and scalability.",
-      "images":"/images/devops.jpeg",
+      "images":"/images/devops.webp",
       "tag1": "Capabilities",
       "values": [
         "CI/CD Pipeline Automation",
@@ -135,7 +135,7 @@
       "slug": "application-modernization",
       "Heading": "Transform legacy applications into cloud-ready, scalable, and future-proof systems.",
       "Description": "Our frameworks help organizations migrate, refactor, or rebuild applications with minimal disruption.",
-      "images": "/images/app.png",
+      "images": "/images/app.webp",
       "tag1": "Offerings",
       "values": [
         "Cloud Migration & Re-platforming",
@@ -174,7 +174,7 @@
       "slug": "ui-ux-design-engineering",
       "Heading": "Deliver intuitive, human-centered experiences that engage and delight users.",
       "Description": "Our UI/UX practice combines design thinking with modern front-end engineering.",
-      "images": "/images/ui.png",
+      "images": "/images/ui.webp",
       "tag1": "We specialize in",
       "values": [
         "UX Research & Strategy",
@@ -211,7 +211,7 @@
       "slug": "cybersecurity-services",
       "Heading": "Build digital trust with proactive and adaptive security solutions.",
       "Description": "We secure your applications, data, and cloud environments against evolving threats.",
-      "images": "/images/cyber.png",
+      "images": "/images/cyber.webp",
       "tag1": "Services",
       "values": [
         "Security Posture Assessment",
@@ -255,7 +255,7 @@
       "slug": "managed-services",
       "Heading": "Focus on growth while we manage your digital infrastructure.",
       "Description": "Our 24x7 managed services ensure your systems are secure, optimized, and always-on.",
-      "images": "/images/manage.png",
+      "images": "/images/manage.webp",
       "tag1": "Managed Offerings",
       "values": [
         "Cloud Operations & Monitoring",
@@ -294,7 +294,7 @@
       "slug": "cloud-consulting-advisory",
       "Heading": "Define your cloud and digital transformation roadmap with expert guidance.",
       "Description": "We bring a balanced mix of strategy, technology, and execution excellence.",
-      "images": "/images/Consulting.png",
+      "images": "/images/Consulting.webp",
       "tag1": "Advisory Services",
       "values": [
         "Cloud Readiness Assessment",
