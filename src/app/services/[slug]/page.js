@@ -118,7 +118,7 @@ const Page = () => {
               <div key={index} className="flex flex-col items-center justify-center gap-4">
                 <motion.div whileHover={{ scale: 0.8 }}>
                   {/*  FIXED IMAGE */}
-                  <Image src="/images/brain.png" alt="icon" width={70} height={50} />
+                  <Image src="/images/Brain.png" alt="icon" width={70} height={50} />
                 </motion.div>
 
                 <h3 className="text-lg font-semibold text-black w-[70%]">
